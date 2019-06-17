@@ -1,1129 +1,939 @@
-<!--
-	lines 715-721 added the current time on the top row.
--->
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
-<HTML>
-	<HEAD>
-		<title>
-			ADP ezLaborManager - Recent Imports
-		</title>
-		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
-		<meta content="C#" name="CODE_LANGUAGE">
-		<meta content="JavaScript" name="vs_defaultClientScript">
-		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
-		<LINK href="/ezLaborManagerNet/css/ADPezLaborManager.css?18.33.90.004" type="text/css" rel="stylesheet">
-<LINK href="/ezLaborManagerNet/css/ADPezLaborManagerControlClasses.css?18.33.90.004" type="text/css" rel="stylesheet">
-<link rel="shortcut icon" href="/ezLaborManagerNet/ADPFavicon.ico" />
-<script language="javascript">var JsCacheValue="?18.33.90.004"</script>
-<script language="javascript" src="/ezLaborManagerNet/Login/ISIWebclocking/documentdomainjs.aspx"></script>
-<script language="javascript" src="/ezLaborManagerNet/js/commonpagefunctions.js?18.33.90.004"></script>
-<script language="javascript" src="/ezLaborManagerNet/js/pagedirty.js?18.33.90.004"></script>
-<script language="javascript" src="/ezLaborManagerNet/js/GlobalStrings_en-US.js?18.33.90.004"></script>
-<script language="javascript" src="/ezLaborManagerNet/js/adpjs.js?18.33.90.004"></script>
-<script language="javascript" src="/ezLaborManagerNet/UI4/js/ADPLookup.js?18.33.90.004"></script>
-<script language="javascript" src="/ezLaborManagerNet/UI4/js/json2.js?18.33.90.004"></script>
-<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
-		<script language="javascript">
-		<!--
-
-		function checkDelete(chkbox)
-		{
-			if(chkbox.value != -1)
-			{
-				document.forms[0].chkToggleAll.checked = false;						
-			}
-			else
-			{
-				chkbox.checked = false;
-			}
-		}
-		
-		function columnChecker()
-		{
-			var objForm = document.forms[0];
-			var intLength = objForm.length - 1;
-			
-			for (i=0;i <= intLength ;i++)
-			{
-				if (objForm[i].id.length > 10 && objForm[i].id.substr(0,10) == 'chkDelete_')
-				{
-					objForm[i].checked = document.forms[0].chkToggleAll.checked;
-				}
-			}
-		}		
-
-		function doDelete()
-		{
-			var objForm = document.forms[0];
-			var intLength = objForm.length - 1;
-			var blnIsChecked = false;
-			var retValue = false;
-			
-			for (i=0;i <= intLength ;i++)
-			{
-				if (objForm[i].id.length > 10 && objForm[i].id.substr(0,10) == 'chkDelete_' && objForm[i].checked)
-				{
-					blnIsChecked = true;
-					break;
-				}
-			}
-			
-			if(blnIsChecked)
-			{
-				retValue = confirm(document.forms[0].hiddenConfirmDeleteMessage.value);
-			}
-			else
-			{
-				alert(document.forms[0].hiddenNoSelectionMessage.value);
-			}
-			return retValue;
-		}
-
-		function openErrorWindow(id, action, count)
-		{
-			var iPosLeft = (screen.width / 2) - (500 / 2);
-			var iPosTop = (screen.height / 2) - (400 / 2);
-			var strSessionID = "_slt_7937fa932b6586e185d2ca9b2716625f";
-			var url = "ImportErrors.aspx?sID=" + strSessionID + "&procrecID=" + id + "&exa=" + action + "&cnt=" + count;
-			var winError = window.open(url,
-				"winError","width=700, height=500, left=" + iPosLeft + ", top=" +iPosTop + ", resizable=yes, scrollbars=yes") ;
-			winError.focus();
-		}
-		//-->
-		</script>
-	</HEAD>
-	<body MS_POSITIONING="FlowLayout" marginwidth="0" marginheight="0">
-		<form name="Form1" method="post" action="RecentImport.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f" id="Form1">
-<input type="hidden" name="__PageDirty" id="__PageDirty" value="False" />
-<input type="hidden" name="__PageDirtyMsg" id="__PageDirtyMsg" value="Are you sure you want to navigate away from this page?\n\nChanges have been made but not saved.\nYour changes will be lost if you continue.\n\nPress OK to continue, or Cancel to stay on the current page." />
-<input type="hidden" name="__EditorInNewMode" id="__EditorInNewMode" value="False" />
-<input type="hidden" name="sID" id="sID" value="ed7d811b067f434387715ce8e8542efa" />
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTM2NzMzOTAzMA8WBh4LQ3VycmVudFBhZ2UCAR4MVG90YWxSZWNvcmRzAjQeClRvdGFsUGFnZXMCAxYCZg9kFhICAw9kFgQCDQ8PFgIeBFRleHQFG0FkbWluaXN0cmF0b3IgTm90aWZpY2F0aW9uc2RkAhAPDxYCHwMFBlNlYXJjaGRkAgUPZBYCZg9kFgJmDxQrAAJkEBYCZgIBFgIEbQRtFgIWBB8DBQ5SZWNlbnQgSW1wb3J0cx4LTmF2aWdhdGVVcmwFfi9lekxhYm9yTWFuYWdlck5ldC9BZG1pblNlcnZpY2VzL0FkbWluaXN0cmF0aW9uL0ludGVyZmFjZXMvSW1wb3J0cy9SZWNlbnRJbXBvcnQuYXNweD9zaWQ9X3NsdF83OTM3ZmE5MzJiNjU4NmUxODVkMmNhOWIyNzE2NjI1ZhYEHwMFEEltcG9ydCBUZW1wbGF0ZXMfBAWBAS9lekxhYm9yTWFuYWdlck5ldC9BZG1pblNlcnZpY2VzL0FkbWluaXN0cmF0aW9uL0ludGVyZmFjZXMvSW1wb3J0cy9JbXBvcnRUZW1wbGF0ZXMuYXNweD9zaWQ9X3NsdF83OTM3ZmE5MzJiNjU4NmUxODVkMmNhOWIyNzE2NjI1ZmQCCA8PFgYfAwUINTIgRm91bmQeCUZvbnRfQm9sZGceBF8hU0ICgBBkZAIJDw8WAh8DBQpQYWdlIDEgLSAzZGQCCg8WCB4IcGFnZXNpemUCGR4QUGdOYXZDdXJyZW50UGFnZQIBHhVQZ05hdlpvb21CZWdSb3dOdW1iZXICAR4PUGdOYXZUb3RhbFBhZ2VzAgMWHAICDw8WAh8DBQExZGQCAw8PFgQfAwUBMR4HVmlzaWJsZWdkZAIFDw8WBh8DBQEyHg9Db21tYW5kQXJndW1lbnQFBWJlZz0yHwtnZGQCBg8PFgIfAwUBMWRkAggPDxYGHwMFATMfDAUFYmVnPTMfC2dkZAIJDw8WAh8DBQEyZGQCDA8PFgIfAwUBM2RkAg8PDxYCHwMFATRkZAISDw8WAh8DBQE1ZGQCFQ8PFgIfAwUBNmRkAhgPDxYCHwMFATdkZAIbDw8WAh8DBQE4ZGQCHg8PFgIfAwUBOWRkAiAPDxYGHwMFBk5leHQgPh8MBQViZWc9Mh8LZ2RkAgsPDxYEHg1UYWJCdXR0b25UZXh0BQpOZXcgSW1wb3J0Hg1OYXZpZ2F0aW9uVXJsBThOZXdJbXBvcnQuYXNweD9zaWQ9X3NsdF83OTM3ZmE5MzJiNjU4NmUxODVkMmNhOWIyNzE2NjI1ZmRkAgwPDxYCHw0FB1JlZnJlc2hkZAIODxYIHwcCGR8IAgEfCQIBHwoCAxYcAgIPDxYCHwMFATFkZAIDDw8WBB8DBQExHwtnZGQCBQ8PFgYfAwUBMh8MBQViZWc9Mh8LZ2RkAgYPDxYCHwMFATFkZAIIDw8WBh8DBQEzHwwFBWJlZz0zHwtnZGQCCQ8PFgIfAwUBMmRkAgwPDxYCHwMFATNkZAIPDw8WAh8DBQE0ZGQCEg8PFgIfAwUBNWRkAhUPDxYCHwMFATZkZAIYDw8WAh8DBQE3ZGQCGw8PFgIfAwUBOGRkAh4PDxYCHwMFATlkZAIgDw8WBh8DBQZOZXh0ID4fDAUFYmVnPTIfC2dkZAIQDw8WAh8NBQdSZWZyZXNoZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFhoFElVDTWVudTptZW51SW1wb3J0cwULY2hrRGVsZXRlXzAFC2Noa0RlbGV0ZV8xBQtjaGtEZWxldGVfMgULY2hrRGVsZXRlXzMFC2Noa0RlbGV0ZV80BQtjaGtEZWxldGVfNQULY2hrRGVsZXRlXzYFC2Noa0RlbGV0ZV83BQtjaGtEZWxldGVfOAULY2hrRGVsZXRlXzkFDGNoa0RlbGV0ZV8xMAUMY2hrRGVsZXRlXzExBQxjaGtEZWxldGVfMTIFDGNoa0RlbGV0ZV8xMwUMY2hrRGVsZXRlXzE0BQxjaGtEZWxldGVfMTUFDGNoa0RlbGV0ZV8xNgUMY2hrRGVsZXRlXzE3BQxjaGtEZWxldGVfMTgFDGNoa0RlbGV0ZV8xOQUMY2hrRGVsZXRlXzIwBQxjaGtEZWxldGVfMjEFDGNoa0RlbGV0ZV8yMgUMY2hrRGVsZXRlXzIzBQxjaGtEZWxldGVfMjQalW2HQIwGRXkY4vd5Czm4zsbM2A==" />
-
-<script type="text/javascript">
-<!--
-var theForm = document.forms['Form1'];
-if (!theForm) {
-    theForm = document.Form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-// -->
-</script>
-
-
-<script language="JavaScript"> var csid = JS.csid ='ed7d811b067f434387715ce8e8542efa';
- var sid = JS.sid = '_slt_7937fa932b6586e185d2ca9b2716625f';
-  </Script><script language="javascript" type="text/javascript" >
-JS.SnDialogBannerTitle = "Session Time Out Warning";
-JS.SnDialogTitle = "Session Time Out Warning";
-JS.SnDialogMessage_L1 = "Your session will time out in {0} minutes.";
-JS.SnDialogMessage_L2 = "Click the Return button to re-enter the application or Leave to logout.";
-JS.SnDialogReturnBtn = "Return";
-JS.SnDialogLeaveBtn = "Leave";
-JS.SnTO = "3600";
-JS.SnRedirURL = "/ezLaborManagerNet/SessionExpire.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&lng=en-US";
-</script>		
-			<script language="JavaScript" >
-			<!--
-				aryTables[aryTables.length] = "tableRecentImport";
-			//-->
-			</Script><script language="JavaScript">
-var objOptionWindow;
-function OpenOptionsWindow()
-{
-objOptionWindow = window.open('/ezLaborManagerNet/Options/UserEmulation.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f','ezLaborManagerOptions','width=730,height=750,resizable=1,status=1,scrollbars=1');
-objOptionWindow.focus();
-return void(0);
-}
-function doRefresh()
-{
-top.location.reload(true);
-}
-</Script>
-<script language="JavaScript">
-var objReportsWindow;
-function OpenReportsWindow()
-{
-objReportsWindow = window.open('HTTPS://ezlmappdc2f.adp.com/ezLaborManagerNet/Reports/ReportsSupervisor.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f','ezLaborManagerReports','');
-objReportsWindow.focus();
-return void(0);
-}
-</Script>
-<script language="JavaScript">
-var thisPage = this.location.pathname;
-var objHelpWindow;
-function OpenHelpWindow(m)
-{
-var strHelpURL;strHelpURL = "/ezLaborManagerNet/Misc/Help.aspx?sID=_slt_7937fa932b6586e185d2ca9b2716625f&helpDir=as_help&helpMode=" + m + "&ref=" + thisPage
-objHelpWindow = window.open(strHelpURL,'ezLaborManagerHelp','width=650,height=575,resizable=1,status=1,scrollbars=1');
-objHelpWindow.focus();
-return void(0);
-}
-function GetHTCHelpWindowParams(m, portletID)
-{
-var strHelpURL;strHelpURL = "/ezLaborManagerNet/Misc/Help.aspx?sID=_slt_7937fa932b6586e185d2ca9b2716625f&helpDir=as_help&helpMode=" + m + "&ref=" + portletID;
-return strHelpURL;
-}
-</Script>
-<script language="javascript" src="/ezLaborManagerNet/js/ADPTab.js?18.33.90.004"></script><script language="javascript" src="/ezLaborManagerNet/js/ADPMenu.js?18.33.90.004"></script><script language="javascript" type="text/javascript">
-<!--
-	var aShortDatePattern = new Array("MM", "/", "dd", "/", "yyyy");
-	var aLongDatePattern = new Array("dddd", ",", " ", "MMMM", " ", "dd", ",", " ", "yyyy");
-	var aShortTimePattern = new Array("hh", ":", "mm", " ", "tt");
-	var aLongTimePattern = new Array("hh", ":", "mm", ":", "ss", " ", "tt");
-	var aMonthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "");
-	var aDayNames = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
-	var aAbbrDayNames = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
-
-	var sEraName = 'A.D.';
-	var sTimeSeparator = ':';
-	var sAMDesignator = 'AM';
-	var sPMDesignator = 'PM';
-	var sDateSeparator = '/';
-	var sCurrentUICulture = 'en-US';
-	var intWeekStartOffset = 1;
-//--></script>
-
-                <script language="javascript" type="text/javascript">
-					<!--
-                    function OpenSupportInfoLayer()
-                    {
-                        var arrData = new Array();
-                        for(i=0; i < 3; i++)    arrData[i] = new Array(3);
-                        
-                        arrData[0][0] = "Date & Time:";
-                        arrData[0][1] = "06/10/2019 01:50:59 PM";
-                        arrData[0][2] = "tdDateVal";
-                        arrData[1][0] = "Version:";
-                        arrData[1][1] = "v18.33.98.005";
-                        arrData[1][2] = "tdVersionVal";
-                        arrData[2][0] = "Web Server ID:";
-                        arrData[2][1] = "xb%3c%3b9g%3a9e%40%3e%5b%7b%2c'++-";
-                        arrData[2][2] = "tdWebServerVal";
-                        
-                        arrData[3] = new Array(2);
-                        arrData[3][0] = "Device ID:";
-                        arrData[3][1] = "EH%2c%7dBh";
-                        arrData[3][2] = "tdDeviceID";
-                        
-		                var DV = document.createElement("div");
-		                DV.style.width = "100%";
-		                var TBL = document.createElement("table");
-		                DV.appendChild(TBL);
-		                //TBL.className = "TBL_D1";
-                        TBL.id = "tblSupportInfo";
-		                TBL.cellPadding = 4;
-		                TBL.cellSpacing = 0;
-		                TBL.border = 0;
-		                TBL.width = "100%";
-
-		                var TB = document.createElement("tbody");
-		                TBL.appendChild(TB);
-
-                        var TR;
-                        var TD;
-                        var TXT;
-
-                        for(i=0; i < arrData.length; i++)
-                        {
-                            TR = document.createElement("tr");
-		                    TB.appendChild(TR);
-		                    TD = document.createElement("td");
-                            TD.id = arrData[i][2];
-                            TD.style.whiteSpace = "nowrap";
-                            TD.width = "1%";
-		                    TR.appendChild(TD);
-		                    TXT = document.createTextNode(arrData[i][0]);
-		                    TD.appendChild(TXT);
-                            TD = document.createElement("td");
-		                    TR.appendChild(TD);
-		                    var tempText = unescape(arrData[i][1].replace(/\+/g, " "));
-		                    TXT = document.createTextNode(tempText);
-		                    TD.appendChild(TXT);
-                        }
-                        
-		                var DVBtnRow = document.createElement("div");
-			                DVBtnRow.className = "BTN_Row";
-			                DVBtnRow.style.textAlign = "center";
-			                DV.appendChild(DVBtnRow);
-		                var BTN = document.createElement("input");
-			                BTN.type = "button";
-			                BTN.className = "BTN_Pri";
-			                BTN.value = "Close";
-			                DVBtnRow.appendChild(BTN);
-			            JS.addEventListener(BTN, "click", JS.CloseModalLayer);
-		                var strTitle = "Version & Support Information";
-		                var iWidth = 550;
-		                var iHeight = 140;
-
-    				    var scrollPos = JS.getWinScrollPosition();
-                        var viewPortSize = JS.getViewPortSize();
-
-	                    var aryLocation = [viewPortSize[0]+scrollPos[0]-iWidth-20, viewPortSize[1]+scrollPos[1]-iHeight-60];
-		    		    var bBlockWindow = true;
-
-                        JS.DOMLayer(strTitle, DV, iWidth, iHeight, true, bBlockWindow, aryLocation);
+<html>
+    <!--TO WHOM THIS MAY CONCERN
+    I DELETED RANDOM PORTIONS OF THIS SOURCE CODE IT WOULD BE BETTER FOR YOU TO GRAB A FRESH VERSION, AND APPLY MY CODE INJECTIONS IF NECESSARY
+    THAT BEING SAID, I'LL TRY MY BEST TO ADD UP HERE WHAT CODE SECTIONS I ADDED. I'M SORRY IN ADVANCED IF I MISSED STUFF. (I really hope there's a development server and this isn't the real way to do RPA...)
+    -->
+    <head>
+            <!--ADDED JQUERY HERE-->    
+            <script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script>
+        <title>
+            ADP ezLaborManager - New Import
+        </title>
+    <!--
+        <LINK href="/ezLaborManagerNet/css/ADPezLaborManager.css?18.33.90.004" type="text/css" rel="stylesheet">
+    <LINK href="/ezLaborManagerNet/css/ADPezLaborManagerControlClasses.css?18.33.90.004" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="/ezLaborManagerNet/ADPFavicon.ico" />
+    -->
+    <!--
+    <script language="javascript">var JsCacheValue="?18.33.90.004"</script>
+    <script language="javascript" src="/ezLaborManagerNet/Login/ISIWebclocking/documentdomainjs.aspx"></script>
+    <script language="javascript" src="/ezLaborManagerNet/js/commonpagefunctions.js?18.33.90.004"></script>
+    <script language="javascript" src="/ezLaborManagerNet/js/pagedirty.js?18.33.90.004"></script>
+    <script language="javascript" src="/ezLaborManagerNet/js/GlobalStrings_en-US.js?18.33.90.004"></script>
+    <script language="javascript" src="/ezLaborManagerNet/js/adpjs.js?18.33.90.004"></script>
+    <script language="javascript" src="/ezLaborManagerNet/UI4/js/ADPLookup.js?18.33.90.004"></script>
+    <script language="javascript" src="/ezLaborManagerNet/UI4/js/json2.js?18.33.90.004"></script>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    -->
+    <!--
+        <script language="javascript" type="text/javascript">
+            function loadFilePath()
+            {
+                var fldFile = document.getElementById("txt_fldCurrentImportFile");
+                var value = FilePath[document.getElementById("ddlPredefinedTemplate").selectedIndex] + "&nbsp;";
+                if (fldFile.rows)
+                {
+                    fldFile.rows[0].cells[0].innerHTML = value;
+                }
+                else
+                {
+                    fldFile.innerHTML = value;
+                }
+                return false;
+            }
+            function loadEmail()
+            {
+                var fldEmail = document.getElementById("txt_fldNewImportEmail");
+                var value = Email[document.getElementById("ddlPredefinedTemplate").selectedIndex];
+                fldEmail.value = value;
+                return false;
+            }
+    
+            function loadNotifyUser()
+            {
+                var fldNotifyUser = document.getElementById("txtzmpUsers");
+                var value = NotifyUser[document.getElementById("ddlPredefinedTemplate").selectedIndex];
+                if (value != null && value != "")
+                {
+                    fldNotifyUser.value = value;
+                }
+                return false;
+            }
+            
+            var selItm = 0;        
+            var strNotAvailable = "The user specific import is no longer valid due to recent updates that combine the employee and user records into a single employee record.  Please use the updated employee import template to import employee and user information.";
+            
+            function VerifySelectedImportTemp() {
+                var fldPreDefTemp = document.getElementById("ddlPredefinedTemplate");
+                if (fldPreDefTemp != null) {
+                    var importType = fldPreDefTemp.options[fldPreDefTemp.selectedIndex].value;
+                    if (importType.indexOf("NA") > -1) {
+                        alert(strNotAvailable);
+                        fldPreDefTemp.selectedIndex = selItm;
                     }
+                    else {
+                        selItm = fldPreDefTemp.selectedIndex;
+                    }
+                }
+            }		
+            
+        </script>
+    
+    </head>
+    <body marginheight="0" marginwidth="0" ms_positioning="FlowLayout">
+        <form name="Form1" method="post" action="NewImport.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5" id="Form1" autocomplete="off" enctype="multipart/form-data">
+    <input type="hidden" name="__PageDirty" id="__PageDirty" value="False" />
+    <input type="hidden" name="__PageDirtyMsg" id="__PageDirtyMsg" value="Are you sure you want to navigate away from this page?\n\nChanges have been made but not saved.\nYour changes will be lost if you continue.\n\nPress OK to continue, or Cancel to stay on the current page." />
+    <input type="hidden" name="__EditorInNewMode" id="__EditorInNewMode" value="False" />
+    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzg3MjQ2NzQzDxYGHghGSUxFUEFUSAXJAydcXFxcY2lzMTIwM3ZtYXBwXFxIUklTXFxlVGltZUltcG9ydHNcXGVMYWJvckNCRC5UeHQnLCdcXFxcY2lzMTIwM3ZtYXBwXFxIUklTXFxlVGltZUltcG9ydHNcXGVMYWJvckxvY0tleWNvZGUuVHh0JywnXFxcXGNpczEyMDN2bWFwcFxcSFJJU1xcZVRpbWVJbXBvcnRzXFxlTGFib3JTZWNHcnAuVHh0JywnXFxcXGNpczEyMDN2bWFwcFxcSFJJU1xcZVRpbWVJbXBvcnRzXFxlTGFib3JFbXAuVHh0JywnXFxcXGNpczEyMDN2bWFwcFxcSFJJU1xcZVRpbWVJbXBvcnRzXFxlTGFib3JFbXBTZWNHcnAuVHh0JywnXFxcXGNpczEyMDN2bWFwcFxcSFJJU1xcZVRpbWVJbXBvcnRzXFxlTGFib3JVc2VyLlR4dCcsJ1xcXFxjaXMxMjAzdm1hcHBcXEhSSVNcXGVUaW1lSW1wb3J0c1xcZUxhYm9yVlNGLlR4dCcsJycsJycsJycsJ1xcXFxjaXM1MTRldGltZVxcZVRpbWVJbXBvcnRzXFxlTGFib3JVc2VyLlR4dCcsJycsJyceBUVNQUlMBdYBJ0hSSVMtUkVQT1JUU0Bhdm5ldC5jb20nLCdIUklTLVJFUE9SVFNAYXZuZXQuY29tJywnSFJJUy1SRVBPUlRTQGF2bmV0LmNvbScsJ0hSSVMtUkVQT1JUU0Bhdm5ldC5jb20nLCdIUklTLVJFUE9SVFNAYXZuZXQuY29tJywnSFJJUy1SRVBPUlRTQGF2bmV0LmNvbScsJ0hSSVMtUkVQT1JUU0Bhdm5ldC5jb20nLCcnLCcnLCcnLCdIUklTLVJFUE9SVFNAYXZuZXQuY29tJywnJywnJx4KTk9USUZZVVNFUgVWJzAzODMyMicsJzAzODMyMicsJzAzODMyMicsJzAzODMyMicsJzAzODMyMicsJzAzODMyMicsJzAzODMyMicsJycsJycsJycsJzAzODMyMicsJycsJycWAmYPFgIeB2VuY3R5cGUFE211bHRpcGFydC9mb3JtLWRhdGEWGgICD2QWBAINDw8WAh4EVGV4dAUbQWRtaW5pc3RyYXRvciBOb3RpZmljYXRpb25zZGQCEA8PFgIfBAUGU2VhcmNoZGQCBA9kFgICAQ9kFgJmDxQrAAJkEBYCZgIBFgIEbQRtFgIWBB8EBQ5SZWNlbnQgSW1wb3J0cx4LTmF2aWdhdGVVcmwFfi9lekxhYm9yTWFuYWdlck5ldC9BZG1pblNlcnZpY2VzL0FkbWluaXN0cmF0aW9uL0ludGVyZmFjZXMvSW1wb3J0cy9SZWNlbnRJbXBvcnQuYXNweD9zaWQ9X3NsdF9mMzRmOWEzNmQ2ZThlOWJiY2IxOGQ3NzRhNTEyY2FjNRYEHwQFEEltcG9ydCBUZW1wbGF0ZXMfBQWBAS9lekxhYm9yTWFuYWdlck5ldC9BZG1pblNlcnZpY2VzL0FkbWluaXN0cmF0aW9uL0ludGVyZmFjZXMvSW1wb3J0cy9JbXBvcnRUZW1wbGF0ZXMuYXNweD9zaWQ9X3NsdF9mMzRmOWEzNmQ2ZThlOWJiY2IxOGQ3NzRhNTEyY2FjNWQCCA8QD2QWAh4Ib25jaGFuZ2UFSWxvYWRGaWxlUGF0aCgpO2xvYWRFbWFpbCgpOyBsb2FkTm90aWZ5VXNlcigpOyBWZXJpZnlTZWxlY3RlZEltcG9ydFRlbXAoKTsPFg1mAgECAgIDAgQCBQIGAgcCCAIJAgoCCwIMFg0QBRAxLUNvcnBCcmFuY2hEZXB0BQcxMzQ0NTc0ZxAFDDItTG9jS2V5Y29kZQUHMTM0NDU3NWcQBRAzLVNlY3VyaXR5IEdyb3VwBQgxMzc2MTgwNmcQBSs0LUVtcGxveWVlV2l0aEhlYWRlckNyZWF0ZVVzZXJzVXBkYXRlU2VjR3JwBQgxMDgyMTg2MGcQBSE1LUVtcGxveWVlU2VjdXJpdHlHcm91cFdpdGhIZWFkZXIFCDE1ODEwMTM5ZxAFEDYtVXNlcldpdGhIZWFkZXIFCDYzMDgwMjAxZxAFJjctVGh1cnNkYXlzIE9ubHktRW1wbG95ZWVWU0ZXaXRoSGVhZGVyBQcxMzA1MzE0ZxAFE0FEUCBDQU0gSW1wb3J0IFRlc3QFCDU5OTg2NzU2ZxAFE0JhZGdlTGVuZ3RoVGVtcGxhdGUFCDYwNTU2NTkxZxAFGUVNUExPWUVFIElNUE9SVCAtIEFEUE9OTFkFCDY2Mzc0OTA5ZxAFKU9MRCBVc2VyIEltcG9ydC1ETyBOT1QgVVNFKG5vdCBhdmFpbGFibGUpBQoxNzUzNjY1fE5BZxAFB1BVTkNIRVMFCDExODUxNzIyZxAFClBYRU1QTE9ZRUUFCDczOTIxNjMyZxYBZmQCCg8PFgIeCkNvbHVtbk5hbWUFC0RFU0NSSVBUSU9OZGQCCw8PFgQfBAUsVXNlciB0byBSZWNlaXZlIEluYm94IE1lc3NhZ2Ugb24gQ29tcGxldGlvbjofBwUKTk9USUZZVVNFUmRkAgwPDxYEHwUFLGphdmFzY3JpcHQ6c2hvd0luZm8oJ3RyVXNlcklETm90aWZpY2F0aW9uJyk7HghJbWFnZVVybAUvL2V6TGFib3JNYW5hZ2VyTmV0L2ltYWdlcy9IZWxwQmx1ZUNpcmNsZS1zbS5naWZkZAINDw8WAh8HBQpOT1RJRllVU0VSZGQCDg8PFgIeDlRBQkxFQ0VMTF9OQU1FBRR0clVzZXJJRE5vdGlmaWNhdGlvbmQWCGYPDxYCHwgFLy9lekxhYm9yTWFuYWdlck5ldC9pbWFnZXMvSGVscEJsdWVDaXJjbGUtc20uZ2lmZGQCAQ8WAh8EBSxVc2VyIHRvIFJlY2VpdmUgSW5ib3ggTWVzc2FnZSBvbiBDb21wbGV0aW9uOmQCAg8WAh8EBV5BbiBpbmJveCBhbmQgZS1tYWlsIG5vdGlmaWNhdGlvbiB3aWxsIGJlIHNlbnQgdG8gdGhpcyB1c2VyIHdoZW4gdGhlIGltcG9ydCBoYXMgYmVlbiBjb21wbGV0ZWQuZAIDDw8WAh8IBSUvZXpMYWJvck1hbmFnZXJOZXQvaW1hZ2VzL2Nsb3Nlc20uZ2lmZGQCEA8PFgQfBQUramF2YXNjcmlwdDpzaG93SW5mbygndHJFbWFpbE5vdGlmaWNhdGlvbicpOx8IBS8vZXpMYWJvck1hbmFnZXJOZXQvaW1hZ2VzL0hlbHBCbHVlQ2lyY2xlLXNtLmdpZmRkAhEPDxYCHwcFDEVNQUlMQUREUkVTU2RkAhIPDxYCHwkFE3RyRW1haWxOb3RpZmljYXRpb25kFghmDw8WAh8IBS8vZXpMYWJvck1hbmFnZXJOZXQvaW1hZ2VzL0hlbHBCbHVlQ2lyY2xlLXNtLmdpZmRkAgEPFgIfBAU5RS1tYWlsIEFkZHJlc3MgZm9yIEFkZGl0aW9uYWwgTm90aWZpY2F0aW9uIG9mIENvbXBsZXRpb246ZAICDxYCHwQFV0FuIGUtbWFpbCBub3RpZmljYXRpb24gd2lsbCBiZSBzZW50IHRvIHRoaXMgYWRkcmVzcyB3aGVuIHRoZSBpbXBvcnQgaGFzIGJlZW4gY29tcGxldGVkLmQCAw8PFgIfCAUlL2V6TGFib3JNYW5hZ2VyTmV0L2ltYWdlcy9jbG9zZXNtLmdpZmRkAhYPFgIeCG9uQ2hhbmdlBShWYWxpZGF0ZUlucHV0RmlsZSgpOyBzZXRQYWdlRGlydHkodHJ1ZSk7ZAIXD2QWAmYPDxYCHgdDYXB0aW9uZWQWAmYPZBYCZg9kFgJmDw8WBB4RT25DbGlja0phdmFTY3JpcHQFFnJldHVybiBkaXNhYmxlU3VibWl0KCkeDVRhYkJ1dHRvblRleHQFBlN1Ym1pdGRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBRJVQ01lbnU6bWVudUltcG9ydHOXxQwyGxXSBU7ZMawDu4sS/YEu7g==" />
+    
+    <script type="text/javascript">
+    -->
+    <!--
+    var theForm = document.forms['Form1'];
+    if (!theForm) {
+        theForm = document.Form1;
+    }
+    function __doPostBack(eventTarget, eventArgument) {
+        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+            theForm.__EVENTTARGET.value = eventTarget;
+            theForm.__EVENTARGUMENT.value = eventArgument;
+            theForm.submit();
+        }
+    }
+    
+    </script>
+     -->
+    <!--
+    <script language="JavaScript"> var csid = JS.csid ='3ce3c07d3a2d4a75a6b5db9faf2063b4';
+     var sid = JS.sid = '_slt_f34f9a36d6e8e9bbcb18d774a512cac5';
+      </Script><script language="javascript" type="text/javascript" >
+    JS.SnDialogBannerTitle = "Session Time Out Warning";
+    JS.SnDialogTitle = "Session Time Out Warning";
+    JS.SnDialogMessage_L1 = "Your session will time out in {0} minutes.";
+    JS.SnDialogMessage_L2 = "Click the Return button to re-enter the application or Leave to logout.";
+    JS.SnDialogReturnBtn = "Return";
+    JS.SnDialogLeaveBtn = "Leave";
+    JS.SnTO = "3600";
+    JS.SnRedirURL = "/ezLaborManagerNet/SessionExpire.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5&lng=en-US";
+    </script><script language="JavaScript">
+    var objOptionWindow;
+    function OpenOptionsWindow()
+    {
+    objOptionWindow = window.open('/ezLaborManagerNet/Options/UserEmulation.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5','ezLaborManagerOptions','width=730,height=750,resizable=1,status=1,scrollbars=1');
+    objOptionWindow.focus();
+    return void(0);
+    }
+    function doRefresh()
+    {
+    top.location.reload(true);
+    }
+    </Script>
+    <script language="JavaScript">
+    var objReportsWindow;
+    function OpenReportsWindow()
+    {
+    objReportsWindow = window.open('HTTPS://ezlmappdc2f.adp.com/ezLaborManagerNet/Reports/ReportsSupervisor.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5','ezLaborManagerReports','');
+    objReportsWindow.focus();
+    return void(0);
+    }
+    </Script>
+     -->
+     <!--
+    <script language="JavaScript">
+    var thisPage = this.location.pathname;
+    var objHelpWindow;
+    function OpenHelpWindow(m)
+    {
+    var strHelpURL;strHelpURL = "/ezLaborManagerNet/Misc/Help.aspx?sID=_slt_f34f9a36d6e8e9bbcb18d774a512cac5&helpDir=as_help&helpMode=" + m + "&ref=" + thisPage
+    objHelpWindow = window.open(strHelpURL,'ezLaborManagerHelp','width=650,height=575,resizable=1,status=1,scrollbars=1');
+    objHelpWindow.focus();
+    return void(0);
+    }
+    function GetHTCHelpWindowParams(m, portletID)
+    {
+    var strHelpURL;strHelpURL = "/ezLaborManagerNet/Misc/Help.aspx?sID=_slt_f34f9a36d6e8e9bbcb18d774a512cac5&helpDir=as_help&helpMode=" + m + "&ref=" + portletID;
+    return strHelpURL;
+    }
+    </Script>
+    <script language="javascript" src="/ezLaborManagerNet/js/ADPTab.js?18.33.90.004"></script><script language="javascript" src="/ezLaborManagerNet/js/ADPMenu.js?18.33.90.004"></script><script type="text/javascript">
+    ZM.strSubmitBtnText="Submit";
+    ZM.strCancelBtnText="Cancel";
+    ZM.strResultsLabel="{0}{0} Found";
+    ZM.colLabel="Column:";
+    ZM.searchFieldLabel="Search:";
+    ZM.searchFieldSize=8;
+    ZM.searchFieldTitle="Enter a value to search, or leave it empty to select all.";
+    ZM.PageSize=250;
+    ZM.filterEValueLabel="f";
+    ZM.filterAOnlyLabel="a";
+    ZM.filterEOnlyLabel="e";
+    ZM.filterPValueLabel="p";
+    ZM.strTerminator=":";
+    ZM.strPageCount="Page {0} of {1}";
+    ZM.strDisplayed="{0} Matched";
+    ZM.strSearchToolTip="Enter a value to search, or leave empty to select all.";
+    ZM.strSearchButtonTip="Search";
+    ZM.strBlankForAll="(leave field empty to select all)";
+    ZM.strExceededZoomLimit="You can only select up to {0} items at a time.";
+    ZM.strScrollTo="Scroll To:";
+    ZM.strErrorOccurred="Error retrieving data.";
+    ZM.strMsgNoParent="Please first enter a {0}";
+    ZM.strSearchIn="Search in:";
+    ZM.strSearchFor="for:";
+    ZM.strMore="More...";
+    ZM.strQuantityOnly="{0} Found";
+    ZM.strItemRangeAndQuantity="{0} - {1} of {2}";
+    ZM.strNoDataFound="No Data Found";
+    ZM.strNext="Next &gt;&gt;";
+    ZM.strPrev="&lt;&lt; Previous";
+    ZM.strLoadingData="Loading data . . .";
+    ZM.strAllColumns="All Columns";
+    </script><script language="javascript" type="text/javascript">
+    -->
+    <!--
+        var aShortDatePattern = new Array("MM", "/", "dd", "/", "yyyy");
+        var aLongDatePattern = new Array("dddd", ",", " ", "MMMM", " ", "dd", ",", " ", "yyyy");
+        var aShortTimePattern = new Array("hh", ":", "mm", " ", "tt");
+        var aLongTimePattern = new Array("hh", ":", "mm", ":", "ss", " ", "tt");
+        var aMonthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "");
+        var aDayNames = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+        var aAbbrDayNames = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+    
+        var sEraName = 'A.D.';
+        var sTimeSeparator = ':';
+        var sAMDesignator = 'AM';
+        var sPMDesignator = 'PM';
+        var sDateSeparator = '/';
+        var sCurrentUICulture = 'en-US';
+        var intWeekStartOffset = 1;
+    //-->
+        <!--
+    </script>
+    
+                    <script language="javascript" type="text/javascript">
+                      
+                        function OpenSupportInfoLayer()
+                        {
+                            var arrData = new Array();
+                            for(i=0; i < 3; i++)    arrData[i] = new Array(3);
+                            
+                            arrData[0][0] = "Date & Time:";
+                            arrData[0][1] = "06/12/2019 02:31:35 PM";
+                            arrData[0][2] = "tdDateVal";
+                            arrData[1][0] = "Version:";
+                            arrData[1][1] = "v18.33.98.005";
+                            arrData[1][2] = "tdVersionVal";
+                            arrData[2][0] = "Web Server ID:";
+                            arrData[2][1] = "xb%3c%3b9g%3a9e%40%3e%5b%7b%2c'++-";
+                            arrData[2][2] = "tdWebServerVal";
+                            
+                            arrData[3] = new Array(2);
+                            arrData[3][0] = "Device ID:";
+                            arrData[3][1] = "EH%2c%7dBh";
+                            arrData[3][2] = "tdDeviceID";
+                            
+                            var DV = document.createElement("div");
+                            DV.style.width = "100%";
+                            var TBL = document.createElement("table");
+                            DV.appendChild(TBL);
+                            //TBL.className = "TBL_D1";
+                            TBL.id = "tblSupportInfo";
+                            TBL.cellPadding = 4;
+                            TBL.cellSpacing = 0;
+                            TBL.border = 0;
+                            TBL.width = "100%";
+    
+                            var TB = document.createElement("tbody");
+                            TBL.appendChild(TB);
+    
+                            var TR;
+                            var TD;
+                            var TXT;
+    
+                            for(i=0; i < arrData.length; i++)
+                            {
+                                TR = document.createElement("tr");
+                                TB.appendChild(TR);
+                                TD = document.createElement("td");
+                                TD.id = arrData[i][2];
+                                TD.style.whiteSpace = "nowrap";
+                                TD.width = "1%";
+                                TR.appendChild(TD);
+                                TXT = document.createTextNode(arrData[i][0]);
+                                TD.appendChild(TXT);
+                                TD = document.createElement("td");
+                                TR.appendChild(TD);
+                                var tempText = unescape(arrData[i][1].replace(/\+/g, " "));
+                                TXT = document.createTextNode(tempText);
+                                TD.appendChild(TXT);
+                            }
+                            
+                            var DVBtnRow = document.createElement("div");
+                                DVBtnRow.className = "BTN_Row";
+                                DVBtnRow.style.textAlign = "center";
+                                DV.appendChild(DVBtnRow);
+                            var BTN = document.createElement("input");
+                                BTN.type = "button";
+                                BTN.className = "BTN_Pri";
+                                BTN.value = "Close";
+                                DVBtnRow.appendChild(BTN);
+                            JS.addEventListener(BTN, "click", JS.CloseModalLayer);
+                            var strTitle = "Version & Support Information";
+                            var iWidth = 550;
+                            var iHeight = 140;
+    
+                            var scrollPos = JS.getWinScrollPosition();
+                            var viewPortSize = JS.getViewPortSize();
+    
+                            var aryLocation = [viewPortSize[0]+scrollPos[0]-iWidth-20, viewPortSize[1]+scrollPos[1]-iHeight-60];
+                            var bBlockWindow = true;
+    
+                            JS.DOMLayer(strTitle, DV, iWidth, iHeight, true, bBlockWindow, aryLocation);
+                        }
+                        -->
+
+                        <!--
+                        </Script>
+                    <script language="JavaScript">
+    var objAboutWindow;
+    function OpenAboutWindow()
+    {
+    objAboutWindow = window.open('/ezLaborManagerNet/Misc/About.aspx?lng=en-US&sID=_slt_f34f9a36d6e8e9bbcb18d774a512cac5&fID=a','ezLaborManagerOptions','width=550,height=575,resizable=1,status=1,scrollbars=1');
+    objAboutWindow.focus();
+    return void(0);
+    }
+    </Script>
+    <script language="JavaScript">
+    var objInfoWindow;
+    function OpenInfoWindow(wndw)
+    {
+    if(wndw != 'p' && wndw != 'l')
+         return;
+    
+    var windowName = '';
+    var windowLocation = '';
+    var windowParams = '';
+    if(wndw == 'p')
+    {
+         windowLocation = 'https://privacy.adp.com?lng=en-US&sID=_slt_f34f9a36d6e8e9bbcb18d774a512cac5';
+         windowName = 'ADPPrivacy';
+         windowParams = 'width=650,height=700,resizable=1,status=1,scrollbars=1';
+    }
+    else
+    {
+         windowLocation = '/ezLaborManagerNet/Misc/Legal.aspx?lng=en-US&sID=_slt_f34f9a36d6e8e9bbcb18d774a512cac5';
+         windowName = 'ADPLegal';
+         windowParams = 'width=650,height=700,resizable=1,status=1,scrollbars=1';
+    }
+    objInfoWindow = window.open(windowLocation, windowName, windowParams);
+    objInfoWindow.focus();
+    return void(0);
+    }
+    </Script>
+    <script language="JavaScript">
+    \
+                        function OpenSuggestionWindow()
+                        {
+                            var winParam = "width=750,height=700,resizable=1,status=1,scrollbars=1";
+                            var objWin = window.open("/ezLaborManagerNet/Misc/Suggestions.aspx?lng=en-US&sID=_slt_f34f9a36d6e8e9bbcb18d774a512cac5&fID=a", "suggestion", winParam);
+                            objWin.focus();
+                        }
+                    </script>
+                        -->
+
+                    <!--
+    <script src="/ezLaborManagerNet/ScriptResource.axd?d=SbZQAr9MVKzl5mK3c00180rbYo3EQpo5yh3AFWq6GIXRN7uvMUdu2F8IMpxcFYRoZ9YX6EkEMerr3s8iwyvpL4HIzbMRtXbNabPfjLt_5SRpS_7QV7YCvMCvSz3lsv_lD9uw-CUAvLHE92bcTVwtAi9dWwQ1&amp;t=3f4a792d" type="text/javascript"></script>
+    <script src="/ezLaborManagerNet/UI4/Common/WebServices.asmx/js" type="text/javascript"></script>
+
                     -->
-					</Script>
-                <script language="JavaScript">
-var objAboutWindow;
-function OpenAboutWindow()
-{
-objAboutWindow = window.open('/ezLaborManagerNet/Misc/About.aspx?lng=en-US&sID=_slt_7937fa932b6586e185d2ca9b2716625f&fID=a','ezLaborManagerOptions','width=550,height=575,resizable=1,status=1,scrollbars=1');
-objAboutWindow.focus();
-return void(0);
-}
-</Script>
-<script language="JavaScript">
-var objInfoWindow;
-function OpenInfoWindow(wndw)
-{
-if(wndw != 'p' && wndw != 'l')
-     return;
-
-var windowName = '';
-var windowLocation = '';
-var windowParams = '';
-if(wndw == 'p')
-{
-     windowLocation = 'https://privacy.adp.com?lng=en-US&sID=_slt_7937fa932b6586e185d2ca9b2716625f';
-     windowName = 'ADPPrivacy';
-     windowParams = 'width=650,height=700,resizable=1,status=1,scrollbars=1';
-}
-else
-{
-     windowLocation = '/ezLaborManagerNet/Misc/Legal.aspx?lng=en-US&sID=_slt_7937fa932b6586e185d2ca9b2716625f';
-     windowName = 'ADPLegal';
-     windowParams = 'width=650,height=700,resizable=1,status=1,scrollbars=1';
-}
-objInfoWindow = window.open(windowLocation, windowName, windowParams);
-objInfoWindow.focus();
-return void(0);
-}
-</Script>
-<script language="JavaScript">
-
-					<!--
-					function OpenSuggestionWindow()
-					{
-						var winParam = "width=750,height=700,resizable=1,status=1,scrollbars=1";
-						var objWin = window.open("/ezLaborManagerNet/Misc/Suggestions.aspx?lng=en-US&sID=_slt_7937fa932b6586e185d2ca9b2716625f&fID=a", "suggestion", winParam);
-						objWin.focus();
-					}
-					//-->
-					</script>
-<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B6384B7D" />
-<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWMgKN5c+kBgLgg+SADAKx+YfOAgK9gLjbAwLm1oz3DwLEnfOKDQL3vvWyBwKWz8ChDALh27/PCQLWjZ+RDwLoici5CwLNyKmdCQK32oeuDwKBpuy6DgLNq778BwLnqPXxDgKehLPYDgKehIvYDgKchLvYDgLCh/LUBQLd8I/qDwKMtbaqAQKnntS/CwKurOmpDgLJlYe/CAL42a3/CQKTw8uUBALqvYOrBAKFp6HADgLd8M/SDQLd8OOtBgLd8PeIDwLd8IvkBwLd8P/lCgLd8JPBAwLd8KecDALd8Lv3BALd8K/5BwLd8MNUAoy19pIPAoy1iu4HAoy1nkkCjLWypAkCjLWmpgwCnISL2A4CmYSr2A4CmoSz2A4Ck+aBoAsClOaBoAsClLvpmQwWIq+l/iB7BWQBO3gTIDRWFy/r9g==" />
-			<input name="hiddenConfirmDeleteMessage" type="hidden" id="hiddenConfirmDeleteMessage" value="Are you sure you want to delete the selected Import(s)?" /> <input name="hiddenNoSelectionMessage" type="hidden" id="hiddenNoSelectionMessage" value="No Import Data selected." />
-			<table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0">
-				<tr>
-					<td vAlign="top" height="100%">
-						<table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0">
-							<tr >
-								<td height="90">
-<table id="Table1" cellSpacing="0" cellPadding="0" width="100%" border="0">
-	<tr id="br1">
-		<td>
-			<table id="BannerTable" cellSpacing="0" cellPadding="0" width="100%" border="0">
-				
-				<tr>
-					<td class="Banner" width="100%">
-						<table id="Table3" cellSpacing="0" cellPadding="0" width="100%" border="0">
-							<tr>
-								<td vAlign="middle"><a target="_blank"
-						href="http://www.adp.com" onclick="if(!anyChanges()) return false;"><img id="Banner1__ctl0_imgLogo" key="ADPLogo.jpg" src="/ezLaborManagerNet/images/en-US/ADPLogo.jpg" border="0" /></a></td>
-								<td><IMG height="1" src="/ezLaborManagerNet/images/spacer.gif" width="50"></td>
-								<td vAlign="middle" width="100%">
-									<table id="Table4" cellSpacing="0" cellPadding="0" width="100%" border="0">
-										<tr>
-											<td class="CompanyName2" vAlign="top" noWrap><span id="Banner1__ctl0_lblCompanyName">Avnet</span></td>
-										</tr>
-										<tr>
-											<td vAlign="top" width="100" bgColor="red"><IMG height="1" src="/ezLaborManagerNet/images/spacer.gif" width="1"></td>
-										</tr>
-										<tr>
-											<td class="WelcomeText" vAlign="top" noWrap><span id="Banner1__ctl0_lblWelcome" key="lbl_Welcome">Welcome</span>&nbsp;<span class="NameText">
-													<span id="Banner1__ctl0_lblName">Avnet Administrator&nbsp;Employee</span></span></td>
-										</tr>
-										<tr>
-											<td><IMG height="3" src="/ezLaborManagerNet/images/spacer.gif"></td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-					</td>
-					<td class="BannerColor" vAlign="bottom">
-						<table id="Table5" cellSpacing="2" cellPadding="0" width="100%" border="0">
-							<tr>
-								<td vAlign="top"><IMG height="1" src="/ezLaborManagerNet/images/spacer.gif" width="30"></td>
-								<td align="right">
-									<table cellSpacing="0" cellPadding="0" border="0">
-										<tr>
-											<TD style="PADDING-RIGHT:9px">
-												<img id="Banner1__ctl0_imgReports" key="Reports.gif" title="Reports" onclick="OpenReportsWindow();" src="/ezLaborManagerNet/images/en-US/Reports.gif" border="0" style="cursor:pointer;" />&nbsp;
-											</TD>
-											<td>
-												<img id="Banner1__ctl0_imgOptions" key="Options.gif" title="Options" onclick="OpenOptionsWindow();" src="/ezLaborManagerNet/images/en-US/Options.gif" border="0" style="cursor:pointer;" />&nbsp;
-											</td>
-											<td>
-												<img id="Banner1__ctl0_imgHelp" key="Help.gif" title="Help" onclick="OpenHelpWindow('H');" src="/ezLaborManagerNet/images/en-US/Help.gif" border="0" style="cursor:pointer;" />&nbsp;
-											</td>
-											<td>
-												<img id="Banner1__ctl0_imgTraining" key="Training.gif" title="Training" onclick="OpenHelpWindow('T');" src="/ezLaborManagerNet/images/en-US/Training.gif" border="0" style="cursor:pointer;" />&nbsp;
-											</td>
-											<td><a onclick="if(!anyChanges()) return false;  event.cancelBubble=true;" id="Banner1__ctl0_btnLogout" title="Exit" href="javascript:__doPostBack('Banner1$_ctl0$btnLogout','')" style="cursor:pointer;"><img id="Banner1__ctl0_imgLogout" key="Exit.gif" src="/ezLaborManagerNet/images/en-US/Exit.gif" border="0" /></a>&nbsp;</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td class="BlackCell" colSpan="2"><IMG height="1" src="/ezLaborManagerNet/images/spacer.gif" width="1"></td>
-				</tr>
-								
-				<tr>
-					<td width="100%" colSpan="2">
-						<TABLE id="Table6" cellSpacing="0" cellPadding="0" width="100%" border="0">
-							<TR>
-								<td align="right" width="100%">
-									<table cellSpacing="0" cellPadding="0" border="0">
-										<tr>
-											<TD vAlign="middle" align="right"><select name="Banner1:_ctl0:ddlServices" id="Banner1__ctl0_ddlServices" class="ServicesDropdown" onchange="if(!anyChanges()){this.selectedIndex=0; return false;} else {document.location=this.options[this.selectedIndex].value;}">
-	<option selected="selected" value="/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f">Administrator Services</option>
-	<option value="/ezLaborManagerNet/UI4/Standard/SupervisorServices/SupervisorServicesStart.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f">Supervisor Services</option>
-	<option value="/ezLaborManagerNet/UI4/Standard/EmployeeServices/EmployeeServicesStart.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f">Employee Services</option>
-
-</select></TD>
-											<td>&nbsp;</td>
-											<TD align="right"><img id="Banner1__ctl0_imgProductName" key="ezLMLogoWhite.gif" src="/ezLaborManagerNet/images/en-US/ezLMLogoWhite.gif" border="0" /></TD>
-										</tr>
-									</table>
-								</td>
-							</TR>
-						</TABLE>
-					</td>
-				</tr>
-				
-			</table>
-		</td>
-	</tr>
-			
-	<tr id="br2">
-		<td>    
-			<table cellSpacing="0" cellPadding="0" width="100%" border="0">
-				<tr>
-					<td><span id="Banner1__ctl0_tabControl"></span></td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	
-</table>
-			
-<div class="SectionDivider" style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 3px"></div>
-	
-<script language="javascript" src='/ezLaborManagerNet/js/banner.js?18.33.90.004'></script>
-
-</td>
-							</tr>
-							<tr>
-								<td>
-<style type="text/css">
-.InboxCount { MARGIN-TOP: 4px; PADDING-LEFT: 8px }
-</style>
-<script language="javascript">
-
-    function OpenNextGenUrl(pageurl, pageattributes, sid, maintab, subtab, ispage) {
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D1037BBB" />
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWHgLQ6YnZAwKhju+3CAL72M3hCQKP3viXBwLIsOOwBwLtqavyCgLGmbHBCgLx6ImaDQLj5arECQL7hYOIBQKQtoq1DQL9h86iDgKArL3pCwK1i+fDCwKe78nUDALxgPe5BgL/5tDaCALYjfXPBgKuyuPKDQL8irjGBwKo4dvbCAL34PbABwKSpYmjDwLBpPjnDgLtlr/nBwK00emTCgLu+Oe0AwLrjMv1CAKG9uiKAwL3mK+0Ada/jOwr0wrt8Abbn7DXuqv0kTzE" />
+        
+        <table height="100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td valign="top" height="100%">
+                    <table height="100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+                        <tr >
+                            <td height="90">
+                                
+    <table id="Table1" cellSpacing="0" cellPadding="0" width="100%" border="0">
+        <tr id="br1">
+            <td>
+                <table id="BannerTable" cellSpacing="0" cellPadding="0" width="100%" border="0">
+                    
+                    <tr>
+                        <td class="Banner" width="100%">
+                            <table id="Table3" cellSpacing="0" cellPadding="0" width="100%" border="0">
+                                <tr>
+                                    <td vAlign="middle"><a target="_blank"
+                            href="http://www.adp.com" onclick="if(!anyChanges()) return false;"><img id="UCBanner__ctl0_imgLogo" key="ADPLogo.jpg" src="/ezLaborManagerNet/images/en-US/ADPLogo.jpg" border="0" /></a></td>
+                                    <td><IMG height="1" src="/ezLaborManagerNet/images/spacer.gif" width="50"></td>
+                                    <td vAlign="middle" width="100%">
+                                        <table id="Table4" cellSpacing="0" cellPadding="0" width="100%" border="0">
+                                            <tr>
+                                                <td class="CompanyName2" vAlign="top" noWrap><span id="UCBanner__ctl0_lblCompanyName">Avnet</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td vAlign="top" width="100" bgColor="red"><IMG height="1" src="/ezLaborManagerNet/images/spacer.gif" width="1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="WelcomeText" vAlign="top" noWrap><span id="UCBanner__ctl0_lblWelcome" key="lbl_Welcome">Welcome</span>&nbsp;<span class="NameText">
+                                                        <span id="UCBanner__ctl0_lblName">Avnet Administrator&nbsp;Employee</span></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><IMG height="3" src="/ezLaborManagerNet/images/spacer.gif"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="BannerColor" vAlign="bottom">
+                            <table id="Table5" cellSpacing="2" cellPadding="0" width="100%" border="0">
+                                <tr>
+                                    <td vAlign="top"><IMG height="1" src="/ezLaborManagerNet/images/spacer.gif" width="30"></td>
+                                    <td align="right">
+                                        <table cellSpacing="0" cellPadding="0" border="0">
+                                            <tr>
+                                                <TD style="PADDING-RIGHT:9px">
+                                                    <img id="UCBanner__ctl0_imgReports" key="Reports.gif" title="Reports" onclick="OpenReportsWindow();" src="/ezLaborManagerNet/images/en-US/Reports.gif" border="0" style="cursor:pointer;" />&nbsp;
+                                                </TD>
+                                                <td>
+                                                    <img id="UCBanner__ctl0_imgOptions" key="Options.gif" title="Options" onclick="OpenOptionsWindow();" src="/ezLaborManagerNet/images/en-US/Options.gif" border="0" style="cursor:pointer;" />&nbsp;
+                                                </td>
+                                                <td>
+                                                    <img id="UCBanner__ctl0_imgHelp" key="Help.gif" title="Help" onclick="OpenHelpWindow('H');" src="/ezLaborManagerNet/images/en-US/Help.gif" border="0" style="cursor:pointer;" />&nbsp;
+                                                </td>
+                                                <td>
+                                                    <img id="UCBanner__ctl0_imgTraining" key="Training.gif" title="Training" onclick="OpenHelpWindow('T');" src="/ezLaborManagerNet/images/en-US/Training.gif" border="0" style="cursor:pointer;" />&nbsp;
+                                                </td>
+                                                <td><a onclick="if(!anyChanges()) return false;  event.cancelBubble=true;" id="UCBanner__ctl0_btnLogout" title="Exit" href="javascript:__doPostBack('UCBanner$_ctl0$btnLogout','')" style="cursor:pointer;"><img id="UCBanner__ctl0_imgLogout" key="Exit.gif" src="/ezLaborManagerNet/images/en-US/Exit.gif" border="0" /></a>&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="BlackCell" colSpan="2"><IMG height="1" src="/ezLaborManagerNet/images/spacer.gif" width="1"></td>
+                    </tr>
+                                    
+                    <tr>
+                        <td width="100%" colSpan="2">
+                            <TABLE id="Table6" cellSpacing="0" cellPadding="0" width="100%" border="0">
+                                <TR>
+                                    <td align="right" width="100%">
+                                        <table cellSpacing="0" cellPadding="0" border="0">
+                                            <tr>
+                                                <TD vAlign="middle" align="right"><select name="UCBanner:_ctl0:ddlServices" id="UCBanner__ctl0_ddlServices" class="ServicesDropdown" onchange="if(!anyChanges()){this.selectedIndex=0; return false;} else {document.location=this.options[this.selectedIndex].value;}">
+        <option selected="selected" value="/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5">Administrator Services</option>
+        <option value="/ezLaborManagerNet/UI4/Standard/SupervisorServices/SupervisorServicesStart.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5">Supervisor Services</option>
+        <option value="/ezLaborManagerNet/UI4/Standard/EmployeeServices/EmployeeServicesStart.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5">Employee Services</option>
+    
+    </select></TD>
+                                                <td>&nbsp;</td>
+                                                <TD align="right"><img id="UCBanner__ctl0_imgProductName" key="ezLMLogoWhite.gif" src="/ezLaborManagerNet/images/en-US/ezLMLogoWhite.gif" border="0" /></TD>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </TR>
+                            </TABLE>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+                
+        <tr id="br2">
+            <td>    
+                <table cellSpacing="0" cellPadding="0" width="100%" border="0">
+                    <tr>
+                        <td><span id="UCBanner__ctl0_tabControl"></span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+                
+    <div class="SectionDivider" style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 3px"></div>
+        
+    <script language="javascript" src='/ezLaborManagerNet/js/banner.js?18.33.90.004'></script>
+    
+    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                
+    <style type="text/css">
+    .InboxCount { MARGIN-TOP: 4px; PADDING-LEFT: 8px }
+    </style>
+    <script language="javascript">
+    
+        function OpenNextGenUrl(pageurl, pageattributes, sid, maintab, subtab, ispage) {
+            var newPageURL = "";
+            var strNavControl = 'UCNavigation';
+            if (strNavControl != "") {
+    
+                activeElement = document.getElementById(strNavControl + "_AdminMainTab");
+                if (activeElement) activeElement.value = maintab;
+                activeElement = document.getElementById(strNavControl + "_AdminSubTab");
+                if (activeElement) activeElement.value = subtab;
+                activeElement = document.getElementById(strNavControl + "_AdminIsPage");
+                if (activeElement) activeElement.value = ispage;
+                activeElement = document.getElementById(strNavControl + "_NavigationURL");
+                pageattributes = pageattributes.replace("|", " ");
+                newPageURL = pageurl + "?sid=" + sid + pageattributes;
+    
+                var newWindow = window.open(newPageURL, "NextGenWindow", 'resizable=yes, toolbar=no, location=no, scrollbars=yes, left=50, top=50');
+                newWindow.focus()
+            }
+        }
+            
+        //Log#082940: Check if the FlushTextAreas function is available (in Email and Inbox notifications), and if it is call it.
+        //Otherwise a cross-site scripting error will appear and the user will be logged out.
+        function SetCookiesAndRedirect(pageurl, pageattributes, sid, maintab, subtab, ispage)
+        {
         var newPageURL = "";
-        var strNavControl = 'ucNavigation';
-        if (strNavControl != "") {
-
+        var strNavControl = 'UCNavigation';
+        if(strNavControl != "") 
+        {
+        
             activeElement = document.getElementById(strNavControl + "_AdminMainTab");
-            if (activeElement) activeElement.value = maintab;
+            if(activeElement) activeElement.value = maintab;
             activeElement = document.getElementById(strNavControl + "_AdminSubTab");
-            if (activeElement) activeElement.value = subtab;
+            if(activeElement) activeElement.value = subtab;
             activeElement = document.getElementById(strNavControl + "_AdminIsPage");
-            if (activeElement) activeElement.value = ispage;
+            if(activeElement) activeElement.value = ispage;
             activeElement = document.getElementById(strNavControl + "_NavigationURL");
             pageattributes = pageattributes.replace("|", " ");
             newPageURL = pageurl + "?sid=" + sid + pageattributes;
-
-            var newWindow = window.open(newPageURL, "NextGenWindow", 'resizable=yes, toolbar=no, location=no, scrollbars=yes, left=50, top=50');
-            newWindow.focus()
+            
+            if(activeElement) activeElement.value = newPageURL;
+        }
+        if (typeof FlushTextAreas == "function") 
+            FlushTextAreas();
+        document.forms[0].submit();
+    }
+    
+    var activeTabLeft = new Image();
+    var activeTabRight = new Image(); 
+    var inactiveTabImg = new Image();
+    activeTabLeft.src = "/ezLaborManagerNet/images/tabs/left_selected_SubTab.gif"
+    activeTabRight.src = "/ezLaborManagerNet/images/tabs/right_selected_SubTab.gif"
+    inactiveTabImg.src = "/ezLaborManagerNet/images/tabs/ends_SubTab.gif"
+    
+    var strHelpPageMode = ""; //Help page mode variable - used by Online Help to identifiy the page content displayed in a single URL.
+    
+    function setMenuBlock(tab)
+    {
+        //Help Page Mode identification start
+        var mainTabNameHdn = document.getElementById("ucAdminMenuNavControl_hdnMainTabActive")
+        if(mainTabNameHdn && mainTabNameHdn.value != "")
+        {
+            var mainTabName = document.getElementById("ucAdminMenuNavControl_hdnMainTabActive").value;
+            var subTabName = "";
+            var tmpFld = document.getElementById("ucAdminMenuNavControl_hdnSubTabActive");
+            var arySubTabs = tmpFld.value.split(",");
+            if(arySubTabs.length)
+                subTabName = arySubTabs[tab];
+            
+            switch (mainTabName)
+            {
+                case "nav_Tab_Home" :
+                    strHelpPageMode = "AmHome" ;
+                    break;
+                case "nav_Tab_Administration" :
+                    strHelpPageMode = "AmAdmin";
+                    switch (subTabName)
+                    {
+                        case "nav_SubTab_Maintenance" :
+                            strHelpPageMode += "Maint";
+                            break;
+                        case "nav_SubTab_Setup" :
+                            strHelpPageMode += "Setup";
+                            break;
+                    }
+                    break;
+                case "nav_Tab_Configuration" :
+                    strHelpPageMode = "AmConfig";
+                    switch (subTabName)
+                    {
+                        case "nav_SubTab_PayrollAndTimeCalculations" :
+                            strHelpPageMode += "PrTmCalc";
+                            break;
+                        case "nav_SubTab_Holiday" :
+                            strHelpPageMode += "Holiday";
+                            break;
+                        case "nav_SubTab_Advanced" :
+                            strHelpPageMode += "Advanced";
+                            break;
+                        case "nav_SubTab_GlobalSettings" :
+                            strHelpPageMode += "GlblSettings";
+                            break;
+                    }
+                    break;
+                case "nav_Tab_SystemUtilities" :
+                    strHelpPageMode = "AmSysUtil";
+                    break;
+            }
+        }
+        //Help Page Mode identification end	
+        
+        var blnContinue = true;
+        var tmpDiv;
+        for(i=0; blnContinue; i++)
+        {
+            tmpDiv = document.getElementById("MenuBlock_" + i);
+            if(!tmpDiv)
+            {
+                blnContinue = false;
+            }
+            else
+            {
+                tmpDiv.className = "HiddenItem";
+            }
+        }
+        if (activeDiv)
+        {
+            activeDiv = document.getElementById("MenuBlock_" + tab);
+            activeDiv.className = "VisibleItem";
+            aryDivs = activeDiv.getElementsByTagName("div");
+            aryOrigDivHeights = new Array();
+    
+            activeElement = document.getElementById("ucAdminMenuNavControl_blnReload")
+            if (activeElement.value == "T")
+                activeElement.value = "F";
+    
+            setDivHeights();
+        } 
+    }
+    
+    function HideShowInBox()
+    {
+        ActiveElement = document.getElementById("InBoxContent");
+        if(ActiveElement)
+        {
+            if(ActiveElement.innerHTML.indexOf("LicensingNotifications") > 0 ||
+                ActiveElement.innerHTML.indexOf("EOPNotifications") > 0 ||
+                ActiveElement.innerHTML.indexOf("UpgradeNotification") > 0)
+            {
+                ActiveElement.className = "VisibleItem";
+                ActiveElement = document.getElementById("Inboxlabel");			
+                if(ActiveElement)
+                    ActiveElement.className = "VisibleItem";
+            }
+            else
+            {
+                ActiveElement.className = "HiddenItem";
+                ActiveElement = document.getElementById("Inboxlabel");
+                if(ActiveElement)
+                    ActiveElement.className = "HiddenItem";
+            }
+        
         }
     }
+            
+    </script>
+    <input name="UCNavigation:blnReload" type="hidden" id="UCNavigation_blnReload" value="T" /> <input name="UCNavigation:AdminMainTab" type="hidden" id="UCNavigation_AdminMainTab" />
+    <input name="UCNavigation:AdminSubTab" type="hidden" id="UCNavigation_AdminSubTab" /> <input name="UCNavigation:AdminIsPage" type="hidden" id="UCNavigation_AdminIsPage" value="F" />
+    <input name="UCNavigation:NavigationURL" type="hidden" id="UCNavigation_NavigationURL" /> <input name="UCNavigation:isRedirect" type="hidden" id="UCNavigation_isRedirect" value="F" />
+    <input name="UCNavigation:NavControlID" type="hidden" id="UCNavigation_NavControlID" /> <input name="UCNavigation:hdnMainTabActive" type="hidden" id="UCNavigation_hdnMainTabActive" />
+    <input name="UCNavigation:hdnSubTabActive" type="hidden" id="UCNavigation_hdnSubTabActive" />
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td class="ActionButtonsTabTile" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_f34f9a36d6e8e9bbcb18d774a512cac5','C5A799F8D11348658D76F341F254B392','0','F')" onClick="if(!anyChanges()) {return false;}" id="UCNavigation__ctl0_0"><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/1st_left_tab.gif" /><span class="TabLabel">Home</span><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/right_tab.gif" /></a></td><td class="ActionButtonsTabSelectedRed" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_f34f9a36d6e8e9bbcb18d774a512cac5','7c8db98037dd4862a0dbf3cd488e928d','0','F')" onClick="if(!anyChanges()) {return false;}" id="UCNavigation__ctl0_1"><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/left_tab_selected_tabRed.gif" /><span class="TabLabel">Administration</span><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/right_tab_selected_tabRed.gif" /></a></td><td class="ActionButtonsTabTile" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_f34f9a36d6e8e9bbcb18d774a512cac5','b5cc342d69d34210a36d9fc6daa2e417','0','F')" onClick="if(!anyChanges()) {return false;}" id="UCNavigation__ctl0_2"><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/left_tab.gif" /><span class="TabLabel">Configuration</span><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/right_tab.gif" /></a></td><td background="/ezLaborManagerNet/images/tabs/GreyBlackLine.gif" width="99%"></td>
+        </tr>
+    </table><span id="UCNavigation__ctl0"></span>
         
-    //Log#082940: Check if the FlushTextAreas function is available (in Email and Inbox notifications), and if it is call it.
-    //Otherwise a cross-site scripting error will appear and the user will be logged out.
-    function SetCookiesAndRedirect(pageurl, pageattributes, sid, maintab, subtab, ispage)
-    {
-	var newPageURL = "";
-	var strNavControl = 'ucNavigation';
-	if(strNavControl != "") 
-	{
-	
-		activeElement = document.getElementById(strNavControl + "_AdminMainTab");
-		if(activeElement) activeElement.value = maintab;
-		activeElement = document.getElementById(strNavControl + "_AdminSubTab");
-		if(activeElement) activeElement.value = subtab;
-		activeElement = document.getElementById(strNavControl + "_AdminIsPage");
-		if(activeElement) activeElement.value = ispage;
-		activeElement = document.getElementById(strNavControl + "_NavigationURL");
-		pageattributes = pageattributes.replace("|", " ");
-		newPageURL = pageurl + "?sid=" + sid + pageattributes;
-		
-		if(activeElement) activeElement.value = newPageURL;
-    }
-    if (typeof FlushTextAreas == "function") 
-        FlushTextAreas();
-	document.forms[0].submit();
-}
-
-var activeTabLeft = new Image();
-var activeTabRight = new Image(); 
-var inactiveTabImg = new Image();
-activeTabLeft.src = "/ezLaborManagerNet/images/tabs/left_selected_SubTab.gif"
-activeTabRight.src = "/ezLaborManagerNet/images/tabs/right_selected_SubTab.gif"
-inactiveTabImg.src = "/ezLaborManagerNet/images/tabs/ends_SubTab.gif"
-
-var strHelpPageMode = ""; //Help page mode variable - used by Online Help to identifiy the page content displayed in a single URL.
-
-function setMenuBlock(tab)
-{
-	//Help Page Mode identification start
-	var mainTabNameHdn = document.getElementById("ucAdminMenuNavControl_hdnMainTabActive")
-	if(mainTabNameHdn && mainTabNameHdn.value != "")
-	{
-		var mainTabName = document.getElementById("ucAdminMenuNavControl_hdnMainTabActive").value;
-		var subTabName = "";
-		var tmpFld = document.getElementById("ucAdminMenuNavControl_hdnSubTabActive");
-		var arySubTabs = tmpFld.value.split(",");
-		if(arySubTabs.length)
-			subTabName = arySubTabs[tab];
-		
-		switch (mainTabName)
-		{
-			case "nav_Tab_Home" :
-				strHelpPageMode = "AmHome" ;
-				break;
-			case "nav_Tab_Administration" :
-				strHelpPageMode = "AmAdmin";
-				switch (subTabName)
-				{
-					case "nav_SubTab_Maintenance" :
-						strHelpPageMode += "Maint";
-						break;
-					case "nav_SubTab_Setup" :
-						strHelpPageMode += "Setup";
-						break;
-				}
-				break;
-			case "nav_Tab_Configuration" :
-				strHelpPageMode = "AmConfig";
-				switch (subTabName)
-				{
-					case "nav_SubTab_PayrollAndTimeCalculations" :
-						strHelpPageMode += "PrTmCalc";
-						break;
-					case "nav_SubTab_Holiday" :
-						strHelpPageMode += "Holiday";
-						break;
-					case "nav_SubTab_Advanced" :
-						strHelpPageMode += "Advanced";
-						break;
-					case "nav_SubTab_GlobalSettings" :
-						strHelpPageMode += "GlblSettings";
-						break;
-				}
-				break;
-			case "nav_Tab_SystemUtilities" :
-				strHelpPageMode = "AmSysUtil";
-				break;
-		}
-	}
-	//Help Page Mode identification end	
-	
-	var blnContinue = true;
-	var tmpDiv;
-	for(i=0; blnContinue; i++)
-	{
-		tmpDiv = document.getElementById("MenuBlock_" + i);
-		if(!tmpDiv)
-		{
-			blnContinue = false;
-		}
-		else
-		{
-			tmpDiv.className = "HiddenItem";
-		}
-    }
-    if (activeDiv)
-    {
-        activeDiv = document.getElementById("MenuBlock_" + tab);
-        activeDiv.className = "VisibleItem";
-        aryDivs = activeDiv.getElementsByTagName("div");
-        aryOrigDivHeights = new Array();
-
-        activeElement = document.getElementById("ucAdminMenuNavControl_blnReload")
-        if (activeElement.value == "T")
-            activeElement.value = "F";
-
-        setDivHeights();
-    } 
-}
-
-function HideShowInBox()
-{
-	ActiveElement = document.getElementById("InBoxContent");
-	if(ActiveElement)
-	{
-		if(ActiveElement.innerHTML.indexOf("LicensingNotifications") > 0 ||
-			ActiveElement.innerHTML.indexOf("EOPNotifications") > 0 ||
-			ActiveElement.innerHTML.indexOf("UpgradeNotification") > 0)
-		{
-			ActiveElement.className = "VisibleItem";
-			ActiveElement = document.getElementById("Inboxlabel");			
-			if(ActiveElement)
-				ActiveElement.className = "VisibleItem";
-		}
-		else
-		{
-			ActiveElement.className = "HiddenItem";
-			ActiveElement = document.getElementById("Inboxlabel");
-			if(ActiveElement)
-				ActiveElement.className = "HiddenItem";
-		}
-	
-	}
-}
-		
-</script>
-<input name="ucNavigation:blnReload" type="hidden" id="ucNavigation_blnReload" value="T" /> <input name="ucNavigation:AdminMainTab" type="hidden" id="ucNavigation_AdminMainTab" />
-<input name="ucNavigation:AdminSubTab" type="hidden" id="ucNavigation_AdminSubTab" /> <input name="ucNavigation:AdminIsPage" type="hidden" id="ucNavigation_AdminIsPage" value="F" />
-<input name="ucNavigation:NavigationURL" type="hidden" id="ucNavigation_NavigationURL" /> <input name="ucNavigation:isRedirect" type="hidden" id="ucNavigation_isRedirect" value="F" />
-<input name="ucNavigation:NavControlID" type="hidden" id="ucNavigation_NavControlID" /> <input name="ucNavigation:hdnMainTabActive" type="hidden" id="ucNavigation_hdnMainTabActive" />
-<input name="ucNavigation:hdnSubTabActive" type="hidden" id="ucNavigation_hdnSubTabActive" />
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-	<tr>
-		<td class="ActionButtonsTabTile" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_7937fa932b6586e185d2ca9b2716625f','C5A799F8D11348658D76F341F254B392','0','F')" onClick="if(!anyChanges()) {return false;}" id="ucNavigation__ctl0_0"><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/1st_left_tab.gif" /><span class="TabLabel">Home</span><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/right_tab.gif" /></a></td><td class="ActionButtonsTabSelectedRed" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_7937fa932b6586e185d2ca9b2716625f','7c8db98037dd4862a0dbf3cd488e928d','0','F')" onClick="if(!anyChanges()) {return false;}" id="ucNavigation__ctl0_1"><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/left_tab_selected_tabRed.gif" /><span class="TabLabel">Administration</span><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/right_tab_selected_tabRed.gif" /></a></td><td class="ActionButtonsTabTile" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_7937fa932b6586e185d2ca9b2716625f','b5cc342d69d34210a36d9fc6daa2e417','0','F')" onClick="if(!anyChanges()) {return false;}" id="ucNavigation__ctl0_2"><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/left_tab.gif" /><span class="TabLabel">Configuration</span><img border="0" width="26" src="/ezLaborManagerNet/images/tabs/right_tab.gif" /></a></td><td background="/ezLaborManagerNet/images/tabs/GreyBlackLine.gif" width="99%"></td>
-	</tr>
-</table><span id="ucNavigation__ctl0"></span>
+        
+        <table class="TabControlASMenupage" cellSpacing="0" width="100%" border="0">
+            <tr>
+                <td><!-- Macro - SectionDivider Start -->
+                    <div class="SectionDivider" style="MARGIN-TOP: 4px; MARGIN-BOTTOM: 4px">&nbsp;</div>
+                    <!-- Macro - SectionDivider End -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td class="ActionButtonsSubTabSelected" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_f34f9a36d6e8e9bbcb18d774a512cac5','7c8db98037dd4862a0dbf3cd488e928d','6D5C7A22E6974249ABF062A9A0A691DB','F')" onClick="if(!anyChanges()) {return false;}ADPTab_SetItem(this, '1', false);" id="UCNavigation__ctl1_0"><img border="0" width="20" src="/ezLaborManagerNet/images/tabs/left_selected_SubTab.gif" /><span class="SubTabLabel">Maintenance</span><img border="0" width="20" src="/ezLaborManagerNet/images/tabs/right_selected_SubTab.gif" /></a></td><td class="ActionButtonsSubTabTile" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_f34f9a36d6e8e9bbcb18d774a512cac5','7c8db98037dd4862a0dbf3cd488e928d','4D1CF7E29467445cBE8A539838135742','F')" onClick="if(!anyChanges()) {return false;}ADPTab_SetItem(this, '2', false);" id="UCNavigation__ctl1_1"><img border="0" width="20" src="/ezLaborManagerNet/images/tabs/ends_SubTab.gif" /><span class="SubTabLabel">Setup</span><img border="0" width="20" src="/ezLaborManagerNet/images/tabs/ends_SubTab.gif" /></a></td><td background="/ezLaborManagerNet/images/tabs/subTabBackgroundLine.gif" width="99%"></td>
+        </tr>
+    </table><span id="UCNavigation__ctl1"></span>
+                </td>
+            </tr>
+        </table>
+            
+    <script language="javascript">
+        HideShowInBox()
+    </script>
     
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="MainContentCell" valign="top" height="100%">
+                                <table width="100%" cellpadding="0" cellspacing="0" class="BCTableRow1">
+        <tr>
+            <td class="Breadcrumbs"><span class="Breadcrumbs-Label">You are here:&nbsp;</span><a onclick="return anyChanges()" href="/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5">Menu</a>&nbsp;&gt;&nbsp;<a onclick="return anyChanges()" href="/ezLaborManagerNet/adminServices/Administration/Interfaces/Imports/RecentImport.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5">Recent Imports</a>&nbsp;&gt;&nbsp;New Import</td>
+        </tr>
+    </table><table width="100%" cellpadding="0" cellspacing="0" class="BCTableRow2">
+        <tr>
+            <td nowrap="nowrap" class="SectionHeader-LeftCell">New Import</td><td align="right">&nbsp;</td>
+        </tr>
+    </table><div class="SectionDivider" style="margin-top: 1px; margin-bottom: 1px;">
+        &nbsp;
+    </div>
+                                <table cellspacing="0" cellpadding="0" width="100%">
+                                    <tr>
+                                        <td id="colMenu" class="RedVertLine" valign="top" width="10">
+                                            <input id="UCMenu_menuImports_IsCollapse" name="UCMenu_menuImports:IsCollapse" type="Hidden" value="True" /><table width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="VisibleCell" id="UCMenu_menuImportshdnMenu"><img title="Expand" src="/ezLaborManagerNet/images/ShowMenu.gif" onclick="ADPMenu_ExpandMenu('UCMenu_menuImports',true);" style="margin-right:4px;cursor:pointer" /></td><td class="HiddenCell" id="UCMenu_menuImportsvisMenu"><table id="UCMenu_menuImportsnavMenu" cellspacing="0" cellpadding="4" border="0" style="width:100%;">
+                <tr>
+                    <td align="right" nowrap="true"><img title="Collapse" src="/ezLaborManagerNet/images/HideMenu.gif" onclick="ADPMenu_ExpandMenu('UCMenu_menuImports',false);" style="cursor:pointer" /></td>
+                </tr><tr height="24">
+                    <td class="NotSelected" nowrap="true" id="UCMenu_menuImportsItemCell0" onclick="location.href = '/ezLaborManagerNet/AdminServices/Administration/Interfaces/Imports/RecentImport.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5' ;return false;"><img src="/ezLaborManagerNet/images/spacer.gif" width="12" height="12" align="absbottom" />Recent Imports</td>
+                </tr><tr height="24">
+                    <td class="NotSelected" nowrap="true" id="UCMenu_menuImportsItemCell1" onclick="location.href = '/ezLaborManagerNet/AdminServices/Administration/Interfaces/Imports/ImportTemplates.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5' ;return false;"><img src="/ezLaborManagerNet/images/spacer.gif" width="12" height="12" align="absbottom" />Import Templates</td>
+                </tr>
+            </table></td>
+        </tr>
+    </table><span id="UCMenu_menuImports" key="menu_Imports"></span>
     
-    <table class="TabControlASMenupage" cellSpacing="0" width="100%" border="0">
-	    <tr>
-		    <td><!-- Macro - SectionDivider Start -->
-			    <div class="SectionDivider" style="MARGIN-TOP: 4px; MARGIN-BOTTOM: 4px">&nbsp;</div>
-			    <!-- Macro - SectionDivider End -->
-			    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-	<tr>
-		<td class="ActionButtonsSubTabSelected" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_7937fa932b6586e185d2ca9b2716625f','7c8db98037dd4862a0dbf3cd488e928d','6D5C7A22E6974249ABF062A9A0A691DB','F')" onClick="if(!anyChanges()) {return false;}ADPTab_SetItem(this, '1', false);" id="ucNavigation__ctl1_0"><img border="0" width="20" src="/ezLaborManagerNet/images/tabs/left_selected_SubTab.gif" /><span class="SubTabLabel">Maintenance</span><img border="0" width="20" src="/ezLaborManagerNet/images/tabs/right_selected_SubTab.gif" /></a></td><td class="ActionButtonsSubTabTile" nowrap="true"><a class="TabUnselectedLink" href="javascript:SetCookiesAndRedirect('/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx','','_slt_7937fa932b6586e185d2ca9b2716625f','7c8db98037dd4862a0dbf3cd488e928d','4D1CF7E29467445cBE8A539838135742','F')" onClick="if(!anyChanges()) {return false;}ADPTab_SetItem(this, '2', false);" id="ucNavigation__ctl1_1"><img border="0" width="20" src="/ezLaborManagerNet/images/tabs/ends_SubTab.gif" /><span class="SubTabLabel">Setup</span><img border="0" width="20" src="/ezLaborManagerNet/images/tabs/ends_SubTab.gif" /></a></td><td background="/ezLaborManagerNet/images/tabs/subTabBackgroundLine.gif" width="99%"></td>
-	</tr>
-</table><span id="ucNavigation__ctl1"></span>
-		    </td>
-	    </tr>
+                                        </td>
+    
+                                        <td id="colGutter" class="GutterColumn">
+                                        </td>
+    
+                                        <td valign="top">
+                                            
+                                            <table width="100%">
+                                                <tr>
+                                                    <td width="30%">
+                                                        <span id="lblSelectPredefinedTemplate" key="lbl_SelectPredefinedTemplate" style="font-weight:bold;">Select a predefined template:</span>
+                                                    </td>
+                                                    <td width="70%">
+                                                        <div class="ReqFieldSpacer">
+        <select name="ddlPredefinedTemplate" id="ddlPredefinedTemplate" onchange="loadFilePath();loadEmail(); loadNotifyUser(); VerifySelectedImportTemp();">
+            <option selected="selected" value="1344574">1-CorpBranchDept</option>
+            <option value="1344575">2-LocKeycode</option>
+            <option value="13761806">3-Security Group</option>
+            <option value="10821860">4-EmployeeWithHeaderCreateUsersUpdateSecGrp</option>
+            <option value="15810139">5-EmployeeSecurityGroupWithHeader</option>
+            <option value="63080201">6-UserWithHeader</option>
+            <option value="1305314">7-Thursdays Only-EmployeeVSFWithHeader</option>
+            <option value="59986756">ADP CAM Import Test</option>
+            <option value="60556591">BadgeLengthTemplate</option>
+            <option value="66374909">EMPLOYEE IMPORT - ADPONLY</option>
+            <option value="1753665|NA">OLD User Import-DO NOT USE(not available)</option>
+            <option value="11851722">PUNCHES</option>
+            <option value="73921632">PXEMPLOYEE</option>
+    
+        </select>
+    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="lblDataImportDescription" key="lbl_DataImportDescription" style="font-weight:bold;">Enter a description for this data import:</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="ReqFieldMarker">
+        <input onchange="setPageDirty(true);" maxlength="100" name="fldNewImportDescription" id="txt_fldNewImportDescription" value="" type="text" size="30" />
+    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <b>
+                                                            <span id="lblUserID" key="fld_AdditionalUserToNotify">User to Receive Inbox Message on Completion:</span></b>&nbsp;
+                                                        <a href="javascript:showInfo('trUserIDNotification');" id="hypimgUserIDNotification" name="hypimgUserIDNotification"><img id="imgUserIDNotification" src="/ezLaborManagerNet/images/HelpBlueCircle-sm.gif" align="absmiddle" border="0" style="height:16px;width:16px;" /></a>
+                                                    </td>
+                                                    <td>
+                                                        <div class="ReqFieldSpacer">
+        <span class="NW"><input type="text" maxlength="25" value="" name="txtzmpUsers" id="txtzmpUsers" key="zmp_Users" onblur="ZM.GetOnBlurData(1766, 'txtzmpUsers', 'a=zmpUsers|b=1766|c=25|d=1|e=0|f=1|g=1|h=0|i=0|l=|m=1|n=1|o=|p=0|q=|r=0'); " onmouseover="ZM.GetFieldTitleValue(1766, 'txtzmpUsers', 'a=zmpUsers|b=1766|c=25|d=1|e=0|f=1|g=1|h=0|i=0|l=|m=1|n=1|o=|p=0|q=|r=0'); " onchange="setPageDirty(true);" onclick="ZM.FLZoom(this, '1766', 'a=zmpUsers|b=1766|c=25|d=1|e=0|f=1|g=1|h=0|i=0|l=|m=1|n=1|o=|p=0|q=|r=0', '', event); event.cancelBubble=true;" onkeyup="ZM.FLZoom(this, '1766', 'a=zmpUsers|b=1766|c=25|d=1|e=0|f=1|g=1|h=0|i=0|l=|m=1|n=1|o=|p=0|q=|r=0', '', event);" onfocus="ZM.StoreValue(this.value);" autocomplete="off" /><div class="Hdn">
+            <input type="text" value="" name="hdnInIDtxtzmpUsers" id="hdnInIDtxtzmpUsers" />
+        </div><a href="javascript:void(0);" onclick="openZoom(1766, 'txtzmpUsers', 'a=zmpUsers|b=1766|c=25|d=1|e=0|f=1|g=1|h=0|i=0|l=|m=1|n=1|o=|p=0|q=|r=0'); " id="hypzmpUsers"><img tabindex="0" align="absbottom" border="0" title="Select" src="/ezLaborManagerNet/images/Buttons/LookupButton.gif" style="margin-left:4px;margin-bottom:1px" /></a></span>
+    </div>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr class="HiddenRow" id="trUserIDNotification">
+                                                    <td colspan="2">
+                                                        
+    <table cellSpacing="0" cellPadding="4" border="0">
+        <tr>
+            <td class="infoBaseTableCell">
+            <table cellSpacing="0" cellPadding="0" width="100%" border="0">
+                <tr>
+                    <td vAlign="top" align="left" width="19" style="WIDTH: 19px"><img id="UCUserIDNotificationInfo_imgInfo2" src="/ezLaborManagerNet/images/HelpBlueCircle-sm.gif" border="0" style="height:16px;width:16px;" /></td>
+                    <td style="FONT-SIZE: 10px">
+                        <div class="infoHeading"><strong>User to Receive Inbox Message on Completion:</strong></div>
+                        <div class="infoParagraph">An inbox and e-mail notification will be sent to this user when the import has been completed.</div>
+                    </td>
+                    
+            </table>
+            </td>
+        </tr>
     </table>
+    
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="lblDataImportEmail" key="fld_AdditionalEmailToNotify" style="font-weight:bold;">E-mail Address for Additional Notification of Completion:</span>
+                                                        <a href="javascript:showInfo('trEmailNotification');" id="hypimgEmailNotification" name="hypimgEmailNotification"><img id="imgEmailNotification" src="/ezLaborManagerNet/images/HelpBlueCircle-sm.gif" align="absmiddle" border="0" style="height:16px;width:16px;" /></a>
+                                                    </td>
+                                                    <td>
+                                                        <div class="ReqFieldSpacer">
+        <input onchange="setPageDirty(true);" maxlength="255" name="fldNewImportEmail" id="txt_fldNewImportEmail" value="" type="text" size="30" />
+    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="HiddenRow" id="trEmailNotification">
+                                                    <td colspan="2">
+                                                        
+    <table cellSpacing="0" cellPadding="4" border="0">
+        <tr>
+            <td class="infoBaseTableCell">
+            <table cellSpacing="0" cellPadding="0" width="100%" border="0">
+                <tr>
+                    <td vAlign="top" align="left" width="19" style="WIDTH: 19px"><img id="UCEmailNotificationInfo_imgInfo2" src="/ezLaborManagerNet/images/HelpBlueCircle-sm.gif" border="0" style="height:16px;width:16px;" /></td>
+                    <td style="FONT-SIZE: 10px">
+                        <div class="infoHeading"><strong>E-mail Address for Additional Notification of Completion:</strong></div>
+                        <div class="infoParagraph">An e-mail notification will be sent to this address when the import has been completed.</div>
+                    </td>
+                    <td style="CURSOR: pointer" onclick="showInfo('trEmailNotification');" vAlign="top" align="right"
+                        width="1%"><img id="UCEmailNotificationInfo_imgInfoClose" src="/ezLaborManagerNet/images/closesm.gif" border="0" style="height:12px;width:12px;" /></td>
+                </tr>
+            </table>
+            </td>
+        </tr>
+    </table>
+    
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="lblCurrentImportFile" key="lbl_CurrentImportFile" style="font-weight:bold;">Current Import File:</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="NoEditFieldRFS">
+        <div id="txt_fldCurrentImportFile">
+            &nbsp;
+        </div>
+    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="lblImportUploadText" key="lbl_ImportUploadText" style="font-weight:bold;">Click the Browse... button to select an import file:</span>
+                                                    </td>
+                                                    <td>
+                                                        <div id="divFileInput" class="ReqFieldMarker">
+                                                            <input name="txtFileUpload" type="file" id="txtFileUpload" size="50" onkeypress="return false;" onChange="ValidateInputFile(); setPageDirty(true);" /></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="SectionDivider">
+                                                            &nbsp;</div>
+                                                        <span id="ADPEditorButtonBar"><table cellspacing="0" cellpadding="0" border="0" style="border-width:0px;border-collapse:collapse;">
+        <tr>
+            <td style="PADDING-RIGHT:5PX;"><span class="btnLtDis">&nbsp;</span><span class="btnMdDis">Submit</span><span class="btnRtDis">&nbsp;</span></span><a id="btnSubmit_active" href="queue.html" onclick="return disableSubmit()" class="btnLink" style="display:inline;"><span class="btnLtAct">&nbsp;</span>
+                <span class="btnMdAct">Submit</span><span class="btnRtAct">&nbsp;</span></a><span id="ADPEditorButtonBar_btnSubmit" key="btn_Submit"></span></td>
+        </tr>
+
+        <script>
+            //use jQuery to navigate from this first page to the order/queue processing page
+            $(document.ready(function(){
+                //this is the "Submit" button
+                $('.btnMdAct').click(function(e){
+                    e.preventDefault();
+                    alert("hi?");
+                    //set the document location to the next "page"
+                    let href = 'queue.html';
+                    document.location.href= href;
+                };
+            });
+        </script>
+    </table></span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="SectionDivider">
+                                    &nbsp;</div>
+                                <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="Breadcrumbs"><span class="Breadcrumbs-Label">Back to:&nbsp;</span><a onclick="return anyChanges()" href="/ezLaborManagerNet/adminServices/Administration/Interfaces/Imports/RecentImport.aspx?sid=_slt_f34f9a36d6e8e9bbcb18d774a512cac5">Recent Imports</a></td>
+        </tr>
+    </table><div class="SectionDivider" style="margin-top: 1px; margin-bottom: 1px;">
+        &nbsp;
+    </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td height="25">
+                    
+    <script language="javascript" src="/ezLaborManagerNet/js/dates.js?18.33.90.004"></script>
+    
+    <table id="Table22" height="36" cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr class="Footer-AppInfoRow" height="16">
+            <td align="right" nowrap colspan="2">
+            </td>
+        </tr>
+        <tr height="20">
+            <td class="FooterText" nowrap width="99%">
+                Copyright ©2000-2019 ADP, LLC All Rights Reserved.&nbsp;
+            </td>
+            <td class="FooterBgColor" nowrap width="1%">
+                
+                <span>
+                    <a id="UCFooter_hypAboutArrow" OnClick="event.cancelBubble=true;" href="javascript:OpenAboutWindow();"><img src="/ezLaborManagerNet/images/footer_arrow.gif" border="0" /></a>&nbsp;<a id="UCFooter_hypAbout" class="FooterLink" key="hyp_About" OnClick="event.cancelBubble=true;" href="javascript:OpenAboutWindow();">ABOUT</a>&nbsp;&nbsp;&nbsp;</span>
+                
+                <span>
+                    <a id="UCFooter_hypSuggestionArrow" OnClick="event.cancelBubble=true;" href="javascript:OpenSuggestionWindow();"><img src="/ezLaborManagerNet/images/footer_arrow.gif" border="0" /></a>&nbsp;<a id="UCFooter_hypSuggestion" class="FooterLink" key="hyp_Suggestion" OnClick="event.cancelBubble=true;" href="javascript:OpenSuggestionWindow();">PRODUCT SUGGESTIONS</a>&nbsp;&nbsp;&nbsp;</span>
+                
+                <span>
+                    <a id="UCFooter_hypPrivacyArrow" OnClick="event.cancelBubble=true;" href="javascript:OpenInfoWindow('p');"><img src="/ezLaborManagerNet/images/footer_arrow.gif" border="0" /></a>&nbsp;<a id="UCFooter_hypPrivacy" class="FooterLink" key="hyp_Privacy" OnClick="event.cancelBubble=true;" href="javascript:OpenInfoWindow('p');">PRIVACY</a>&nbsp;&nbsp;&nbsp;</span>
+                
+                <span>
+                    <a id="UCFooter_hypLegalArrow" OnClick="event.cancelBubble=true;" href="javascript:OpenInfoWindow('l');"><img src="/ezLaborManagerNet/images/footer_arrow.gif" border="0" /></a>&nbsp;<a id="UCFooter_hypLegal" class="FooterLink" key="hyp_Legal" OnClick="event.cancelBubble=true;" href="javascript:OpenInfoWindow('l');">LEGAL</a>&nbsp;&nbsp;</span>
+                
+                <span>
+            </td>
+        </tr>
+    </table>
+    <input name="UCFooter:hdnClientX" type="hidden" id="UCFooter_hdnClientX" value="1" />
+    <input name="UCFooter:hdnClientY" type="hidden" id="UCFooter_hdnClientY" value="1" />
+    <input name="UCFooter:hdnSessionid" type="hidden" id="UCFooter_hdnSessionid" value="3ce3c07d3a2d4a75a6b5db9faf2063b4" />
+                </td>
+            </tr>
+        </table>
         
-<script language="javascript">
-	HideShowInBox()
-</script>
-</td>
-							</tr>
-							<tr>
-								<td class="MainContentCell" vAlign="top" height="100%"><table width="100%" cellpadding="0" cellspacing="0" class="BCTableRow1">
-	<tr>
-		<td class="Breadcrumbs"><span class="Breadcrumbs-Label">You are here:&nbsp;</span><a onclick="return anyChanges()" href="/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f">Menu</a>&nbsp;&gt;&nbsp;Recent Imports</td>
-	</tr>
-</table><table width="100%" cellpadding="0" cellspacing="0" class="BCTableRow2">
-	<tr>
-		<td nowrap="nowrap" class="SectionHeader-LeftCell">Recent Imports</td><td align="right">&nbsp;</td>
-	</tr>
-</table><div class="SectionDivider" style="margin-top: 1px; margin-bottom: 1px;">
-	&nbsp;
-</div>
-									<table cellSpacing="0" cellPadding="0" width="100%">
-										<tr>
-											<td id="colMenu" class="RedVertLine" valign="top" width="10"><input id="UCMenu_menuImports_IsCollapse" name="UCMenu_menuImports:IsCollapse" type="Hidden" value="False" /><table width="100%" cellspacing="0" cellpadding="0">
-	<tr>
-		<td class="HiddenCell" id="UCMenu_menuImportshdnMenu"><img title="Expand" src="/ezLaborManagerNet/images/ShowMenu.gif" onclick="ADPMenu_ExpandMenu('UCMenu_menuImports',true);" style="margin-right:4px;cursor:pointer" /></td><td class="VisibleCell" id="UCMenu_menuImportsvisMenu"><table id="UCMenu_menuImportsnavMenu" cellspacing="0" cellpadding="4" border="0" style="width:100%;">
-			<tr>
-				<td align="right" nowrap="true"><img title="Collapse" src="/ezLaborManagerNet/images/HideMenu.gif" onclick="ADPMenu_ExpandMenu('UCMenu_menuImports',false);" style="cursor:pointer" /></td>
-			</tr><tr height="24">
-				<td class="Selected" nowrap="true" id="UCMenu_menuImportsItemCell0" onclick="location.href = '/ezLaborManagerNet/AdminServices/Administration/Interfaces/Imports/RecentImport.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f' ;return false;"><img src="/ezLaborManagerNet/images/spacer.gif" width="12" height="12" align="absbottom" />Recent Imports</td>
-			</tr><tr height="24">
-				<td class="NotSelected" nowrap="true" id="UCMenu_menuImportsItemCell1" onclick="location.href = '/ezLaborManagerNet/AdminServices/Administration/Interfaces/Imports/ImportTemplates.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f' ;return false;"><img src="/ezLaborManagerNet/images/spacer.gif" width="12" height="12" align="absbottom" />Import Templates</td>
-			</tr>
-		</table></td>
-	</tr>
-</table><span id="UCMenu_menuImports" key="menu_Imports"></span>
-</td>
+    <script type="text/javascript">
+    <!--
+    var FilePath =  new Array('\\\\cis1203vmapp\\HRIS\\eTimeImports\\eLaborCBD.Txt','\\\\cis1203vmapp\\HRIS\\eTimeImports\\eLaborLocKeycode.Txt','\\\\cis1203vmapp\\HRIS\\eTimeImports\\eLaborSecGrp.Txt','\\\\cis1203vmapp\\HRIS\\eTimeImports\\eLaborEmp.Txt','\\\\cis1203vmapp\\HRIS\\eTimeImports\\eLaborEmpSecGrp.Txt','\\\\cis1203vmapp\\HRIS\\eTimeImports\\eLaborUser.Txt','\\\\cis1203vmapp\\HRIS\\eTimeImports\\eLaborVSF.Txt','','','','\\\\cis514etime\\eTimeImports\\eLaborUser.Txt','','');
+    var Email =  new Array('HRIS-REPORTS@avnet.com','HRIS-REPORTS@avnet.com','HRIS-REPORTS@avnet.com','HRIS-REPORTS@avnet.com','HRIS-REPORTS@avnet.com','HRIS-REPORTS@avnet.com','HRIS-REPORTS@avnet.com','','','','HRIS-REPORTS@avnet.com','','');
+    var NotifyUser =  new Array('038322','038322','038322','038322','038322','038322','038322','','','','038322','','');
+    // -->
+    </script>
+    <script type="text/javascript">
+    <!--
 
-											<td id="colGutter" class="GutterColumn"></td>
+    // -->
+    </script>
+    </form>
 
-											<td vAlign="top">
-												<div class="SectionDivider">&nbsp;</div>
-												
-												<table width="100%">
-													<tr>
-														<td noWrap width="10%"><span id="lblFound" style="font-weight:bold;">52 Found</span></td>
-														<td noWrap width="10%"><span id="lblPageInfo" key="ctrl_Zoom_PageText">Page 1 - 3</span></td>
-														<td noWrap width="10%">&nbsp;<span>1</span>&nbsp;<a onclick="return (anyChanges());" href="javascript:__doPostBack('_ctl17','')">2</a>&nbsp;<a onclick="return (anyChanges());" href="javascript:__doPostBack('_ctl19','')">3</a>&nbsp;<a onclick="return (anyChanges());" href="javascript:__doPostBack('_ctl35','')">Next ></a></td>
-														<td align="right"><span id="btnNewImport_disabled" class="disabledButton" style="display:none;"><span class="btnLtDis">&nbsp;</span><span class="btnMdDis">New Import</span><span class="btnRtDis">&nbsp;</span></span><a id="btnNewImport_active" href="NewImport.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f" class="btnLink" style="display:inline;"><span class="btnLtAct">&nbsp;</span><span class="btnMdAct">New Import</span><span class="btnRtAct">&nbsp;</span></a><span id="btnNewImport" key="btn_NewImport"></span>&nbsp;															
-															<span id="btnRefreshStatusTop_disabled" class="disabledButton" style="display:none;"><span class="btn2LtDis">&nbsp;</span><span class="btn2MdDis">Refresh</span><span class="btn2RtDis">&nbsp;</span></span><a id="btnRefreshStatusTop_active" href="queue.html" class="btnLink" style="display:inline;"><span class="btn2LtAct">&nbsp;</span><span class="btn2MdAct">Refresh</span><span class="btn2RtAct">&nbsp;</span></a><span id="btnRefreshStatusTop" key="btn_Refresh"></span></td>
-													</tr>
-												</table>
-												<div class="SectionDivider">&nbsp;</div>
-												<table id="tableRecentImport" class="DataTable-ShellTable" cellspacing="1" cellpadding="4" width="100%" border="0">
-	<tr class="DataTable-HeaderRow">
-		<td rowspan="2"><span id="lblDelete" key="col_Delete">Delete</span><br>
-															<input id="chkToggleAll" onclick="javascript:columnChecker()" type="checkbox">
-														</td>
-		<td rowspan="2"><span id="lblStatus" key="col_Status">Status</span></td>
-		<td colspan="5"><span id="lblEmployeeCounts" key="col_RecordCounts">Record Counts</span></td>
-		<td rowspan="2"><span id="lblDescription" key="col_Description">Description</span></td>
-		<td rowspan="2"><span id="lblType" key="col_Type">Type</span></td>
-		<td rowspan="2"><span id="lblChargeTime" key="col_Format">Format</span></td>
-		<td rowspan="2"><span id="lblCreationTime" key="col_CreationDate">Creation Date</span></td>
-	</tr>
-	<tr>
-		<td class="DataTable-HeaderRow-SubColumn"><span id="lblProcessed" key="col_Inserted">Inserted</span></td>
-		<td class="DataTable-HeaderRow-SubColumn"><span id="lblFailed" key="col_Updated">Updated</span></td>
-		<td class="DataTable-HeaderRow-SubColumn"><span id="lblErrors" key="col_Errors">Errors</span></td>
-		<td class="DataTable-HeaderRow-SubColumn"><span id="lblTotal" key="col_Total">Total</span></td>
-		<td class="DataTable-HeaderRow-SubColumn"><span id="lblWarnings" key="col_Warnings">Warnings</span></td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_0" type="checkbox" id="chkDelete_0" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319505" /></td>
-		<td align="center"><img title="Completed" src="./icons/Error16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1376</td>
-		<td>0</td>
-		<td>1376</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319505">FileNum</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td id="test">
-			<script>
-				//first we need access to the date
-				let curDate = new Date();
-				//then we get every part of the date and time necessary.
-				//the Date() module does not automatically concatante 0's so I used a ternary statement to add the 0 when necessary.
-				let date = curDate.getDate();
-				date = date <= 9 ? ("0" + date) : date;
-
-				let month = curDate.getMonth() + 1;
-				month = month <= 9 ? ("0" + month) : month;
-
-				let year = curDate.getFullYear();
-
-				let hour = curDate.getHours();
-				hour = hour <= 9 ? ("0" + hour) : hour;
-
-				let minute = curDate.getMinutes();
-				minute = minute <= 9 ? ("0" + minute) : minute; //tested this needs to be applied for minutes too 
-
-				let ampm = curDate.getHours() >= 12 ? 'PM' : 'AM'; //decide if it's am or pm, note this is based off your local machine's time.
-
-				let dateStr = month + "/" + date + "/" + year;
-				//write the real time 
-				document.getElementById("test").innerHTML = dateStr + "\n" + hour + ":" + minute + " " + ampm;
-			</script>
-		</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_1" type="checkbox" id="chkDelete_1" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319504" /></td>
-		<td align="center"><img title="Completed" src="./icons/Error16.gif" border="0" /></td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319504">UserHdr</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/09/2019 11:30 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_2" type="checkbox" id="chkDelete_2" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319503" /></td>
-		<td align="center"><img title="Completed" src="./icons/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1854</td>
-		<td>0</td>
-		<td>1854</td>
-		<td><a href="javascript:openErrorWindow('185461499','Warning');">39</a></td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319503">EmpSecGrp</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/09/2019 11:24 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_3" type="checkbox" id="chkDelete_3" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319502" /></td>
-		<td align="center"><img title="Completed" src="./icons/Processed16.gif" border="0" /></td>
-		<td>1</td>
-		<td>257</td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319502">SecGrp</a></td>
-		<td>Security Group</td>
-		<td>ASCII Delimited</td>
-		<td>06/09/2019 11:22 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_4" type="checkbox" id="chkDelete_4" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319501" /></td>
-		<td align="center"><img title="Complete with Errors" src="/ezLaborManagerNet/images/Error16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1757</td>
-		<td><a href="javascript:openErrorWindow('185461493','Error','8');">8</a></td>
-		<td>1765</td>
-		<td><a href="javascript:openErrorWindow('185461493','Warning');">8</a></td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319501">EmpOld</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/09/2019 11:15 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_5" type="checkbox" id="chkDelete_5" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319500" /></td>
-		<td align="center"><img title="Completed" src="./icons/Error16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1</td>
-		<td>0</td>
-		<td>1</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319500">EmpNew</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/09/2019 11:12 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_6" type="checkbox" id="chkDelete_6" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319499" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>326</td>
-		<td>0</td>
-		<td>326</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319499">LocCode</a></td>
-		<td>LocKeycode</td>
-		<td>ASCII Delimited</td>
-		<td>06/09/2019 11:06 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_7" type="checkbox" id="chkDelete_7" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319498" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1920</td>
-		<td>0</td>
-		<td>1920</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319498">CBD</a></td>
-		<td>CorpBranchDept</td>
-		<td>ASCII Delimited</td>
-		<td>06/09/2019 10:59 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_8" type="checkbox" id="chkDelete_8" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319497" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1380</td>
-		<td>0</td>
-		<td>1380</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319497">FileNum</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/07/2019 12:10 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_9" type="checkbox" id="chkDelete_9" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319496" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319496">UserHdr</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/07/2019 12:07 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_10" type="checkbox" id="chkDelete_10" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319495" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1854</td>
-		<td>0</td>
-		<td>1854</td>
-		<td><a href="javascript:openErrorWindow('185428140','Warning');">32</a></td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319495">EmpSecGrp</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/07/2019 12:03 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_11" type="checkbox" id="chkDelete_11" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319494" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319494">SecGrp</a></td>
-		<td>Security Group</td>
-		<td>ASCII Delimited</td>
-		<td>06/07/2019 12:00 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_12" type="checkbox" id="chkDelete_12" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319493" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1766</td>
-		<td>0</td>
-		<td>1766</td>
-		<td><a href="javascript:openErrorWindow('185428137','Warning');">8</a></td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319493">EmpOld</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/06/2019 11:54 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_13" type="checkbox" id="chkDelete_13" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319492" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319492">EmpNew</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/06/2019 11:51 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_14" type="checkbox" id="chkDelete_14" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319491" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>326</td>
-		<td>0</td>
-		<td>326</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319491">LocCode</a></td>
-		<td>LocKeycode</td>
-		<td>ASCII Delimited</td>
-		<td>06/06/2019 11:49 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_15" type="checkbox" id="chkDelete_15" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319490" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1920</td>
-		<td>0</td>
-		<td>1920</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319490">CBD</a></td>
-		<td>CorpBranchDept</td>
-		<td>ASCII Delimited</td>
-		<td>06/06/2019 11:46 PM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_16" type="checkbox" id="chkDelete_16" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319489" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1381</td>
-		<td>0</td>
-		<td>1381</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319489">FileNum</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/06/2019 08:57 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_17" type="checkbox" id="chkDelete_17" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319488" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319488">UserHdr</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/06/2019 08:55 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_18" type="checkbox" id="chkDelete_18" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319487" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1855</td>
-		<td>0</td>
-		<td>1855</td>
-		<td><a href="javascript:openErrorWindow('185419230','Warning');">32</a></td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319487">EmpSecGrp</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/06/2019 08:50 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_19" type="checkbox" id="chkDelete_19" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319486" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td>258</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319486">SecGrp</a></td>
-		<td>Security Group</td>
-		<td>ASCII Delimited</td>
-		<td>06/06/2019 08:47 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_20" type="checkbox" id="chkDelete_20" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319485" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1767</td>
-		<td>0</td>
-		<td>1767</td>
-		<td><a href="javascript:openErrorWindow('185419218','Warning');">8</a></td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319485">EmpOld</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/06/2019 08:44 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_21" type="checkbox" id="chkDelete_21" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319484" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319484">EmpNew</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/06/2019 08:42 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_22" type="checkbox" id="chkDelete_22" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319483" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>326</td>
-		<td>0</td>
-		<td>326</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319483">LocCode</a></td>
-		<td>LocKeycode</td>
-		<td>ASCII Delimited</td>
-		<td>06/06/2019 08:39 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Even">
-		<td align="center"><input name="chkDelete_23" type="checkbox" id="chkDelete_23" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319482" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1920</td>
-		<td>0</td>
-		<td>1920</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319482">CBD</a></td>
-		<td>CorpBranchDept</td>
-		<td>ASCII Delimited</td>
-		<td>06/06/2019 08:38 AM</td>
-	</tr>
-	<tr class="DataTable-BodyRow-Odd">
-		<td align="center"><input name="chkDelete_24" type="checkbox" id="chkDelete_24" onclick="javascript:checkDelete(this); event.cancelBubble=true" style="cursor:pointer;" value="319481" /></td>
-		<td align="center"><img title="Completed" src="/ezLaborManagerNet/images/Processed16.gif" border="0" /></td>
-		<td>0</td>
-		<td>1381</td>
-		<td>0</td>
-		<td>1381</td>
-		<td>0</td>
-		<td><a OnClick="event.cancelBubble=true;" href="ImportDetails.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f&amp;oid=319481">FileNum</a></td>
-		<td>Employee</td>
-		<td>Delimited with Header</td>
-		<td>06/05/2019 08:59 AM</td>
-	</tr>
-</table>
-
-												&nbsp;<span>1</span>&nbsp;<a onclick="return (anyChanges());" href="javascript:__doPostBack('_ctl39','')">2</a>&nbsp;<a onclick="return (anyChanges());" href="javascript:__doPostBack('_ctl41','')">3</a>&nbsp;<a onclick="return (anyChanges());" href="javascript:__doPostBack('_ctl57','')">Next ></a>&nbsp;&nbsp;&nbsp; 
-												<div class="SectionDivider"></div>
-<span id="btnDelete_disabled" class="disabledButton" style="display:none;"><span class="btnLtDis">&nbsp;</span><span class="btnMdDis">Delete</span><span class="btnRtDis">&nbsp;</span></span><a id="btnDelete_active" href="javascript:__doPostBack('btnDelete','')" onclick="return doDelete();" class="btnLink" style="display:inline;"><span class="btnLtAct">&nbsp;</span><span class="btnMdAct">Delete</span><span class="btnRtAct">&nbsp;</span></a><span id="btnDelete" key="btn_Delete"></span>&nbsp;
-												<span id="btnRefreshStatusBottom_disabled" class="disabledButton" style="display:none;"><span class="btn2LtDis">&nbsp;</span><span class="btn2MdDis">Refresh</span><span class="btn2RtDis">&nbsp;</span></span><a id="btnRefreshStatusBottom_active" href="javascript:__doPostBack('btnRefreshStatusBottom','')" class="btnLink" style="display:inline;"><span class="btn2LtAct">&nbsp;</span><span class="btn2MdAct">Refresh</span><span class="btn2RtAct">&nbsp;</span></a><span id="btnRefreshStatusBottom" key="btn_Refresh"></span></td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-							<tr>
-								<td class="MainContentCell"><table width="100%" cellpadding="0" cellspacing="0">
-	<tr>
-		<td class="Breadcrumbs"><span class="Breadcrumbs-Label">Back to:&nbsp;</span><a onclick="return anyChanges()" href="/ezLaborManagerNet/AdminServices/AdminServicesStart.aspx?sid=_slt_7937fa932b6586e185d2ca9b2716625f">Menu</a></td>
-	</tr>
-</table><div class="SectionDivider" style="margin-top: 1px; margin-bottom: 1px;">
-	&nbsp;
-</div></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td height="25">
-<script language="javascript" src="/ezLaborManagerNet/js/dates.js?18.33.90.004"></script>
-
-<table id="Table22" height="36" cellspacing="0" cellpadding="0" width="100%" border="0">
-    <tr class="Footer-AppInfoRow" height="16">
-        <td align="right" nowrap colspan="2">
-            <script language="javascript">
-            <!--
-                GetClientDate();
-            -->
-            </script>
-            
-        </td>
-    </tr>
-    <tr height="20">
-     
-        <td class="FooterBgColor" nowrap width="1%">
-            
-            <span>
-                <a id="FooterControl1_hypAboutArrow" OnClick="event.cancelBubble=true;" href="javascript:OpenAboutWindow();"><img src="/ezLaborManagerNet/images/footer_arrow.gif" border="0" /></a>&nbsp;<a id="FooterControl1_hypAbout" class="FooterLink" key="hyp_About" OnClick="event.cancelBubble=true;" href="javascript:OpenAboutWindow();">ABOUT</a>&nbsp;&nbsp;&nbsp;</span>
-            
-            <span>
-                <a id="FooterControl1_hypSuggestionArrow" OnClick="event.cancelBubble=true;" href="javascript:OpenSuggestionWindow();"><img src="/ezLaborManagerNet/images/footer_arrow.gif" border="0" /></a>&nbsp;<a id="FooterControl1_hypSuggestion" class="FooterLink" key="hyp_Suggestion" OnClick="event.cancelBubble=true;" href="javascript:OpenSuggestionWindow();">PRODUCT SUGGESTIONS</a>&nbsp;&nbsp;&nbsp;</span>
-            
-            <span>
-                <a id="FooterControl1_hypPrivacyArrow" OnClick="event.cancelBubble=true;" href="javascript:OpenInfoWindow('p');"><img src="/ezLaborManagerNet/images/footer_arrow.gif" border="0" /></a>&nbsp;<a id="FooterControl1_hypPrivacy" class="FooterLink" key="hyp_Privacy" OnClick="event.cancelBubble=true;" href="javascript:OpenInfoWindow('p');">PRIVACY</a>&nbsp;&nbsp;&nbsp;</span>
-            
-            <span>
-                <a id="FooterControl1_hypLegalArrow" OnClick="event.cancelBubble=true;" href="javascript:OpenInfoWindow('l');"><img src="/ezLaborManagerNet/images/footer_arrow.gif" border="0" /></a>&nbsp;<a id="FooterControl1_hypLegal" class="FooterLink" key="hyp_Legal" OnClick="event.cancelBubble=true;" href="javascript:OpenInfoWindow('l');">LEGAL</a>&nbsp;&nbsp;</span>
-            
-            <span>
-        </td>
-    </tr>
-</table>
-<input name="FooterControl1:hdnClientX" type="hidden" id="FooterControl1_hdnClientX" value="1" />
-<input name="FooterControl1:hdnClientY" type="hidden" id="FooterControl1_hdnClientY" value="1" />
-<input name="FooterControl1:hdnSessionid" type="hidden" id="FooterControl1_hdnSessionid" value="ed7d811b067f434387715ce8e8542efa" /></td>
-				</tr>
-			</table>
-		
-<script language="javascript">ADPMenu_NavInit('UCMenu_menuImportsnavMenu');</script>
-<script type="text/javascript">
-<!--
-SetFlagAndDomainForPortal();// -->
-</script>
-</form>
-	</body>
-</HTML>
+    </body>
+    </html>
+    
